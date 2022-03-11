@@ -21,7 +21,13 @@ I use i3wm which has vim-like keybinds. I use vim keybinds in online ides for pr
 
 ## Why I am switching again?
 **2022**
+I have recently been tinkering with smalltalk. The Pharo(or any smalltalk) IDE has been one of the best IDEs I have ever used. I know when I miss vim because I feel slow. But I never felt slow in Pharo's IDE. Its because you are able to reach just about anywhere within few clicks. I realised I was getting more done and was managing very less code. It made me think about extensibility. 
+
+And this made me change my mind. Its about time I did emacs properly.
 
 ## What do I plan to achieve?
+One day I will start my day by opening emacs and I'll end it by closing emacs.
+This is what I am aiming for.
 
 ## What now?
+I will use vim for quick edits. I will continue using it in my browser. Emacs support in browser is not functional.
