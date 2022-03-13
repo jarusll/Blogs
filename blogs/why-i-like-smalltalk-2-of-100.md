@@ -1,7 +1,7 @@
-# Why I like Smalltalk: Part 1 of 100 - Intention revealing names
+# Why I like Smalltalk: Part 2 of 100 - Intention revealing names
 
 A properly named message communicates well. The developer does not have to look for the implementation. 
-This has more to do with design but it has been in Smalltalk's genes since its inception.
+This has more to do with design, but it has been in Smalltalk's genes since its inception.
 
 What is an intention-revealing method? 
 A message which
