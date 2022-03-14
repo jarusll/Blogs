@@ -27,12 +27,20 @@ Describe variable brings up the documentation about a variable by name.
 
 I rarely use this as I am not an advanced user. But its good to have for customization.
 
+## Completion engine & Minibuffer goodies
+I would recommend any completion engine which works out for you.
+
+I like expanded minibuffer so I can see suggestions at a time.
+
+I personally use `ivy` because it comes with expanded minibuffer. There are many options for completion engines but an expanded minibuffer is very nice to have.
+
+## Keycast mode
+This mode shows the keychord & the associated function on the modeline.
+I like having this so I can learn emacs. Totally optional but a nice to have.
+
 ## Why best friends?
 I believe that one of the biggest difference between a professional and a begginer is that the professional has gotten comfortable in an environment which is pretty hostile to them.
 
 If you foster exploration for yourself, you can get comfortable really fast. 
-
-## What about other describe-* functions?
-You can look at it yourself. These 2 functions will help you explore every part of emacs.
 
 Godspeed
