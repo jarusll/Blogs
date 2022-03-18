@@ -1,10 +1,10 @@
-# Desi Literate Programming in Bhailang
+ # Desi Literate Programming in Bhailang
 
-## What is Bhailang?
+## What is Bhailang[^bhailang]?
 According to its landing page, "A toy programming language written in Typescript".
 Its a programming language based on Indian slangs, which makes it fun & accessible for anyone who knows Hindi.
 
-## What is Literate Programming?
+## What is Literate Programming[^literate-programming]?
 According to Donald Knuth, the creator of Literate programming, "Literate programming is a programming methodology that combines a programming language with a documentation language, making programs more robust, more portable, and more easily maintained than programs written only in a high-level language."
 
 Simply put, its "Code inside Documentation" instead of "Documentation inside Code".
@@ -18,3 +18,6 @@ Also according to the documentation, "`hi bhai` is the entrypoint for the progra
 
 ## Sample programs 
 I wont explain the syntax, its trivial. They are just syntactic sugars for programming constructs but accessible.
+
+[^bhailang]: https://bhailang.js.org
+[^literate-programming]: http://www.literateprogramming.com
