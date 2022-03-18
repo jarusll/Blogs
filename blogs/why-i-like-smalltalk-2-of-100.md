@@ -1,4 +1,4 @@
-# Why I like Smalltalk: Part 2 of 100 - Intention revealing names
+# Why I like Smalltalk: Part 2 of 100 - Intention revealing names[^1]
 
 A properly named message communicates well. The developer does not have to look for the implementation. 
 This has more to do with design, but it has been in Smalltalk's genes since its inception.
@@ -18,3 +18,5 @@ Let's decide on a name for a method which looks up by a `key` in a `Dictionary`
 - `at:` - Best, takes Dictionary in context as key-value pairs
 
 This might seem a very simple pattern, but If you can make this happen in your codebase, you are a god.
+
+[^1]: https://wiki.c2.com/?IntentionRevealingNames
