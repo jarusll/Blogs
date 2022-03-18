@@ -1,6 +1,6 @@
 # Why I like Smalltalk: Part 1 of 100 - Documentation
 
-## Smalltalk Documentation follows CRC(Class, Responsibilities & Collaborators)
+## Smalltalk Documentation follows [CRC](http://www.agilemodeling.com/artifacts/crcModel.htm)(Class, Responsibilities & Collaborators)
 - For those who don't know what CRC is, it's a tool that helps design objects. 
 - A CRC card consists of Class name at the top, responsibilities on the left side & collaborators on the right.
 - Since a card models only one object, it enables rapid prototyping. It is feasible to go through many iterations before settling on an implementation.
@@ -8,7 +8,7 @@
 
 
 ## Smalltalk Documentation talks to you
-I noticed this in Pharo's documentation. 
+I noticed this in [Pharo's](https://pharo.org) documentation. 
 Classes have comments as they talk to you. They give you an overview of what they are and what they can do. They also tell you how you get started with them with some examples.
 
 ### Example from Pharo's documentation for `Point`
