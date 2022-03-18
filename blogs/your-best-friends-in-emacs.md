@@ -4,12 +4,12 @@
 - Invoking a function through a key press
 - Invoking a function manually
 
-## Describe Mode `C-h m`
+## Describe Mode[^emacs-modes] `C-h m`
 Describe mode gives you a list of all enabled Minor modes, functions in the major mode & all their key binds.
 
 I skim through `describe-mode` the first time I am using a mode. 
 The functions are generally named as `namespace-like`-`action-like`-`something-else`. 
-I remember the pattern so I can type out these functions with some autocompletion engine. 
+I remember the pattern so I can type out these functions with some autocompletion engine[^completion-engine]. 
 I lookup the keybind for that action as well, after using it for a couple of times it becomes second nature.
 
 ## Describe Function `C-h f`
@@ -27,6 +27,9 @@ Describe variable brings up the documentation about a variable by name.
 
 I rarely use this as I am not an advanced user. But its good to have for customization.
 
+## Where is?
+The `where-is` function returns you the keybind of a function. Use it when you want to know the function but not its keybind.
+
 ## Completion engine & Minibuffer goodies
 I would recommend any completion engine which works out for you.
 
@@ -39,8 +42,12 @@ This mode shows the keychord & the associated function on the modeline.
 I like having this so I can learn emacs. Totally optional but a nice to have.
 
 ## Why best friends?
-I believe that one of the biggest difference between a professional and a begginer is that the professional has gotten comfortable in an environment which is pretty hostile to them.
+I believe that one of the biggest difference between a professional and a beginner is that the professional has gotten comfortable in an environment which is pretty hostile to them.
 
-If you foster exploration for yourself, you can get comfortable really fast. 
+If you foster exploration[^xah-emacs-guide] for yourself, you can get comfortable really fast. 
 
 Godspeed
+
+[^xah-emacs-guide]: http://xahlee.info/emacs/index.html
+[^emacs-modes]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Modes.html
+[^completion-engine]: I use [ivy](https://oremacs.com/swiper), you choose for yourself. [Reddit Poll](https://www.reddit.com/r/emacs/comments/n40lk8/poll_whats_your_ideal_minibuffer_completion_ui)
