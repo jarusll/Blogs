@@ -21,6 +21,12 @@ Can be casted on ally. It delays all the damage and healing during False Promise
 
 ## Combos
 
+### Heal allies
+Cast Fate's Edict to save from magical damage, stack them with Purifying Flames so they get healing without any damage.
+
+### Punish enemies
+Cast Purifying Flames, wait for cooldown, Cast one more Purifying Flames quickly followed by Fortune's End to purge healing.
+
 ## Mobs
 Since it comes from Dota, enemies will have both magic and pure damage. 
 
