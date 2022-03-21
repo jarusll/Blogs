@@ -1,5 +1,5 @@
 ---
-title: Why I like Smalltalk: Part 2 of 100 - Intention revealing names
+title: Why I like Smalltalk - Part 2 of 100 - Intention revealing names
 ---
 # Why I like Smalltalk: Part 2 of 100 - Intention revealing names[^1]
 

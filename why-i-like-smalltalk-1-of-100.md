@@ -1,5 +1,5 @@
 ---
-title: Why I like Smalltalk: Part 1 of 100 - Documentation
+title: Why I like Smalltalk - Part 1 of 100 - Documentation
 ---
 # Why I like Smalltalk: Part 1 of 100 - Documentation
 
