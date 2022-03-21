@@ -1,4 +1,7 @@
- # Desi Literate Programming in Bhailang
+---
+title: Desi Literate Programming in Bhailang
+---
+# Desi Literate Programming in Bhailang
 
 ## What is Bhailang[^bhailang]?
 According to its landing page, "A toy programming language written in Typescript".

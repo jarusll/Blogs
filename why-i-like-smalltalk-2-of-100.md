@@ -1,3 +1,6 @@
+---
+title: Why I like Smalltalk: Part 2 of 100 - Intention revealing names
+---
 # Why I like Smalltalk: Part 2 of 100 - Intention revealing names[^1]
 
 A properly named message communicates well. The developer does not have to look for the implementation. 

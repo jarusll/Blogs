@@ -1,3 +1,6 @@
+---
+title: A game which I will make(someday)
+---
 # A game which I will make(someday)
 
 ## Motivation

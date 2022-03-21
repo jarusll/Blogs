@@ -1,3 +1,6 @@
+---
+title: Your best friends in Emacs
+---
 # Your best friends in Emacs
 
 ## In emacs, You are either

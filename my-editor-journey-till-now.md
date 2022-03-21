@@ -1,3 +1,6 @@
+---
+title: My Editor Journey Till Now
+---
 # My Editor Journey Till Now
 
 ## What did I start with?

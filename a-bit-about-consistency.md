@@ -1,3 +1,6 @@
+---
+title: A bit about Consistency
+---
 # A bit about Consistency
 
 I have decided I wanna get good at Digital Art.
