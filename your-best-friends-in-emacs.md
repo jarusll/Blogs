@@ -53,4 +53,4 @@ Godspeed
 
 [^xah-emacs-guide]: http://xahlee.info/emacs/index.html
 [^emacs-modes]: https://www.gnu.org/software/emacs/manual/html_node/emacs/Modes.html
-[^completion-engine]: I use [ivy](https://oremacs.com/swiper), you choose for yourself. [Reddit Poll](https://www.reddit.com/r/emacs/comments/n40lk8/poll_whats_your_ideal_minibuffer_completion_ui)
+[^completion-engine]: https://www.reddit.com/r/emacs/comments/n40lk8/poll_whats_your_ideal_minibuffer_completion_ui
