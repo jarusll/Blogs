@@ -1,5 +1,6 @@
 ---
 title: Your best friends in Emacs
+date: "2022-03-14"
 ---
 # Your best friends in Emacs
 

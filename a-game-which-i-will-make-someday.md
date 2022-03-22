@@ -1,5 +1,6 @@
 ---
 title: A game which I will make(someday)
+date: "2022-03-19"
 ---
 # A game which I will make(someday)
 

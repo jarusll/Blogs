@@ -1,5 +1,6 @@
 ---
 title: Why I like Smalltalk - Part 1 of 100 - Documentation
+date: "2022-03-11"
 ---
 # Why I like Smalltalk: Part 1 of 100 - Documentation
 

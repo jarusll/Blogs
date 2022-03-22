@@ -1,5 +1,6 @@
 ---
 title: A bit about Consistency
+date: "2022-03-20"
 ---
 # A bit about Consistency
 
