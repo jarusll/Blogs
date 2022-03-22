@@ -9,7 +9,7 @@ I have been playing alot of Oracle in Dota. I like the fact that he's a double e
 The spell combos feel like a mini game itself and I think I can make a game out of it.
 
 ## Gameplay loop
-For those who don't know Oracle's spells, heres a quick 
+For those who don't know Oracle's spells, heres a quick introduction 
 
 ### Fortune's End
 A channeled ability which roots[^root] the enemy. Can be casted on enemy or ally. When casted on ally, purges all debuffs[^debuff]. When casted on enemy, purges all buffs[^buff].
