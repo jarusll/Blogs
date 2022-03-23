@@ -23,5 +23,57 @@ Also according to the documentation, "`hi bhai` is the entrypoint for the progra
 ## Sample programs 
 I wont explain the syntax, its trivial. They are just syntactic sugars for programming constructs but accessible.
 
+Lets go with classics.
+
+### Fizzbuzz
+```bhailang:fizzbuzz.bl
+hi bhai
+
+bhai ye hai counter = 1;
+bhai ye hai upperbound = 100;
+
+jab tak bhai (counter <= upperbound){
+
+  agar bhai (counter % 15 == 0){
+    bol bhai counter, "FizzBuzz";
+  } nahi to bhai (counter % 3 == 0){
+    bol bhai counter, "Fizz";
+  } nahi to bhai (counter % 5 == 0){
+    bol bhai counter, "Buzz";
+  } warna bhai {
+    bol bhai counter;
+  }
+
+  counter = counter + 1;
+}
+
+bye bhai
+```
+
+Now for number 2, let's go with something math isn't quite ready for.
+
+### Collatz function
+```bhailang:collatz.bl
+hi bhai
+
+bhai ye hai input = 10;
+bhai ye hai counter = 0;
+
+  jab tak bhai(input != 1){
+    agar bhai(input % 2 == 0){
+      input = input / 2;
+    } warna bhai {
+      input = 3 * input + 1;
+    }
+
+    counter = counter + 1;
+  }
+
+  bol bhai counter;
+
+bye bhai
+```
+
+
 [^bhailang]: https://bhailang.js.org
 [^literate-programming]: http://www.literateprogramming.com
