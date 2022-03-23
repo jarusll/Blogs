@@ -30,7 +30,7 @@ Steps to run in the script. It could be a shell script or an Action.
 Custom applications made to achieve specific functionality. You can write your own actions.
 
 ### Runners
-Environment to run the workflow in. Github provides Windows, Macos, Ubuntu Linux. You can host your own runners as well.
+Environment to run the workflow in. Github provides Windows, MacOS, Ubuntu Linux. You can host your own runners as well.
 
 # Automating it
 Lets start by naming our github action first.
@@ -90,3 +90,51 @@ This action copies the build dir `/docs` to `gh-pages` repo.
 After the build has been made and copied to `gh-pages`, I can enable to Github pages for my repo for `gh-pages` branch on `root` directory.
 
 # An issue I ran into
+
+I have my `posts` as a git submodule in my portfolio repo. When `actions/checkout` checked out my portfolio repo, it did not fetch the submodule `posts`. As a result, no posts were rendered in the build. I solved this by manually cloning the `posts` repo.
+```
+    - name: Clone posts
+      working-directory: ./src
+      run: |
+        git clone https://github.com/jarusll/posts.git
+```
+
+# Final script
+```
+name: build page
+
+on: 
+  push:
+    branches:    
+      - master 
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    
+    - name: yarn install
+      run: |
+        yarn install
+
+    - name: Clone posts
+      working-directory: ./src
+      run: |
+        git clone https://github.com/jarusll/posts.git
+    - name: yarn build
+      run: |
+        yarn run build
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
+
+```
