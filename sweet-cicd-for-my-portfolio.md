@@ -1,7 +1,6 @@
 ---
 title: Sweet CICD for my Portfolio
 date: "2022-03-23"
-eleventyExcludeFromCollections: true
 ---
 
 # What my current setup is?
