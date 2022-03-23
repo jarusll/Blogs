@@ -20,18 +20,59 @@ I want to solve both problems. I do not want to track the build and I want it to
 # My weapon of choice - Github Actions
 It has good documentation and I got comfortable with it very fast. There are 4 entities in a GA script.
 
-## Events
+### Events
 When to trigger the script.
 
-## Jobs
+### Jobs
 Steps to run in the script. It could be a shell script or an Action.
 
-## Actions
+### Actions
 Custom applications made to achieve specific functionality. You can write your own actions.
 
-## Runners
+### Runners
 Environment to run the workflow in. Github provides Windows, Macos, Ubuntu Linux. You can host your own runners as well.
 
 # Automating it
+Lets start by naming our github action first.
+```
+name: build & push to gh-pages branch
+```
+
+I want the workflow to trigger when I push any change on master branch.
+
+```
+on: 
+  push:
+    branches:
+      - master 
+```
+
+The steps to build is pretty simple, I want to run the workflow on ubuntu-linux.
+
+The Github action `actions/setup-node` is pretty self explanatory. 
+The Node version on my local is 14.18.1, so I decided to go with 14.x.
+
+The Github action [`actions/checkout`](https://stackoverflow.com/questions/67131269/github-jobs-what-is-use-actions-checkout) checks out your repo. 
+
+After that its just installing the dependencies by `yarn install` and then building by `yarn build`
+```
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js 14.x
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+    
+    - name: yarn install
+      run: |
+        yarn install
+    - name: yarn build
+      run: |
+        yarn run build
+```
 
 # An issue I ran into
