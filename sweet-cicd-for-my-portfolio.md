@@ -33,13 +33,13 @@ Environment to run the workflow in. Github provides Windows, MacOS, Ubuntu Linux
 
 # Automating it
 Lets start by naming our github action first.
-```
+```github:name
 name: build & push to gh-pages branch
 ```
 
 I want the workflow to trigger when I push any change on master branch.
 
-```
+```github:on
 on: 
   push:
     branches:
@@ -54,7 +54,7 @@ The Node version on my local is 14.18.1, so I decided to go with 14.x.
 The Github action [`actions/checkout`](https://stackoverflow.com/questions/67131269/github-jobs-what-is-use-actions-checkout) checks out your repo. 
 
 After that its just installing the dependencies by `yarn install` and then building by `yarn build`
-```
+```github:jobs
 jobs:
   build:
 
@@ -77,7 +77,7 @@ jobs:
 After building, I want to push the build directory to `gh-pages` repo.
 There is an action available for it called [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
 This action copies the build dir `/docs` to `gh-pages` repo.
-```
+```github:deploy
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@v4.2.5
       with:
@@ -91,7 +91,7 @@ After the build has been made and copied to `gh-pages`, I can enable to Github p
 # An issue I ran into
 
 I have my `posts` as a git submodule in my portfolio repo. When `actions/checkout` checked out my portfolio repo, it did not fetch the submodule `posts`. As a result, no posts were rendered in the build. I solved this by manually cloning the `posts` repo.
-```
+```github:clone
     - name: Clone posts
       working-directory: ./src
       run: |
@@ -99,7 +99,7 @@ I have my `posts` as a git submodule in my portfolio repo. When `actions/checkou
 ```
 
 # Final script
-```
+```github:cicd.yml
 name: build page
 
 on: 
