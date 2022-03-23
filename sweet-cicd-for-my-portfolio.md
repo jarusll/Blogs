@@ -75,4 +75,18 @@ jobs:
         yarn run build
 ```
 
+After building, I want to push the build directory to `gh-pages` repo.
+There is an action available for it called [JamesIves/github-pages-deploy-action](https://github.com/JamesIves/github-pages-deploy-action).
+This action copies the build dir `/docs` to `gh-pages` repo.
+```
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
+
+```
+
+After the build has been made and copied to `gh-pages`, I can enable to Github pages for my repo for `gh-pages` branch on `root` directory.
+
 # An issue I ran into
