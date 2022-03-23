@@ -3,7 +3,8 @@ title: Sweet CICD for my Portfolio
 date: "2022-03-23"
 ---
 
-# What my current setup is?
+# Sweet CICD for my Portfolio
+## What my current setup is?
 My portfolio is hosted on Github pages. Github pages has support for selecting the directory to host.
 The options are "root" or "/docs" directories. 
 
@@ -13,10 +14,10 @@ This setup is a bit tedious. There are 2 problems.
 - The build is in master repo
 - I have to track the build in git
 
-# What I want?
+## What I want?
 I want to solve both problems. I do not want to track the build and I want it to be in seperate repo.
 
-# My weapon of choice - Github Actions
+## My weapon of choice - Github Actions
 It has good documentation and I got comfortable with it very fast. There are 4 entities in a GA script.
 
 ### Events
@@ -31,7 +32,7 @@ Custom applications made to achieve specific functionality. You can write your o
 ### Runners
 Environment to run the workflow in. Github provides Windows, MacOS, Ubuntu Linux. You can host your own runners as well.
 
-# Automating it
+## Automating it
 Lets start by naming our github action first.
 ```github:name
 name: build & push to gh-pages branch
@@ -88,7 +89,7 @@ This action copies the build dir `/docs` to `gh-pages` repo.
 
 After the build has been made and copied to `gh-pages`, I can enable to Github pages for my repo for `gh-pages` branch on `root` directory.
 
-# An issue I ran into
+## An issue I ran into
 
 I have my `posts` as a git submodule in my portfolio repo. When `actions/checkout` checked out my portfolio repo, it did not fetch the submodule `posts`. As a result, no posts were rendered in the build. I solved this by manually cloning the `posts` repo.
 ```github:clone
@@ -98,7 +99,7 @@ I have my `posts` as a git submodule in my portfolio repo. When `actions/checkou
         git clone https://github.com/jarusll/posts.git
 ```
 
-# Final script
+## Final script
 ```github:cicd.yml
 name: build page
 
