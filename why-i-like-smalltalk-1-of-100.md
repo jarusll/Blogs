@@ -16,27 +16,24 @@ I noticed this in Pharo's[^2] documentation.
 Classes have comments as they talk to you. They give you an overview of what they are and what they can do. They also tell you how you get started with them with some examples.
 
 ### Example from Pharo's documentation for `Point`
+```smalltalk:Point
     I represent an x,y pair of numbers usually designating a location on the screen.
 
     My instances are created either using the message `@` or `x:y:` or `r:degrees:` as follows:
 
-    ```
     | pt |
     pt := 10@20.
     pt x 
     >>> 10
     pt y
     >>> 20 			 
-    ```
 
-    ```
     | pt |
     pt := Point x: 10 y: 20.
     pt x 
     > 10
     pt y
     > 20 			 
-    ```
 
     I define many nice messages that deal with point such as: 
     - arithmetic such as \+, \*, reciprocal, min, abs,
@@ -46,6 +43,7 @@ Classes have comments as they talk to you. They give you an overview of what the
     - extent such as scaleTo:
     - transformation such as negated, translatedBy:, scaleBy:
     - rounding with roundTo:, roundUpTo:, truncateTo:, truncated
+```
 
 How cool is that? That makes me wanna take Point for a coffee.
 I have adopted this style of documentation for just about everything. 
