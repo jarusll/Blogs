@@ -1,7 +1,6 @@
 ---
 title: What motivates me (I think)
 date: "2022-03-27"
-eleventyExcludeFromCollections: true
 ---
 
 # What motivates me (I think) 
