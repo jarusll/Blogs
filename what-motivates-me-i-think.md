@@ -1,6 +1,6 @@
 ---
 title: What motivates me (I think)
-date: "2022-03-27"
+date: 2022-03-27
 ---
 
 # What motivates me (I think) 

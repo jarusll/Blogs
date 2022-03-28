@@ -1,6 +1,6 @@
 ---
 title: Sweet CICD for my Portfolio
-date: "2022-03-23"
+date: 2022-03-23
 ---
 
 # Sweet CICD for my Portfolio

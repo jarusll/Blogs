@@ -1,6 +1,6 @@
 ---
 title: Why I like Smalltalk - Part 2 of 100 - Intention revealing names
-date: "2022-03-12"
+date: 2022-03-12
 ---
 # Why I like Smalltalk: Part 2 of 100 - Intention revealing names[^1]
 

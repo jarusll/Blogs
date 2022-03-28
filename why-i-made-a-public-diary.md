@@ -1,5 +1,6 @@
 ---
 title: Why I made a public diary
+date: 2022-03-24
 ---
 
 # Why I made a public diary

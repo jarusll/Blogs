@@ -1,6 +1,6 @@
 ---
 title: Desi Literate Programming in Bhailang
-date: "2022-03-16"
+date: 2022-03-16
 ---
 # Desi Literate Programming in Bhailang
 
