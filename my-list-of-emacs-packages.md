@@ -21,6 +21,9 @@ and much more features to make using the minibuffer easy.
 ## golden-ratio ##
 Automatically expands the window you switch to. Very big, split like crazy and stop caring.
 
+## helpful ##
+A better \*help\* buffer. Just because its better.
+
 ## keycast ##
 A nice to have utility to see which commands are being executed. 
 
