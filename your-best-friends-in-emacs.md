@@ -26,6 +26,11 @@ Describe key gives you the command associated with the key/chord in current mode
 
 I use this to find the function associated with a key/chord.
 
+## Describe Symbol `C-h o`
+Describe symbol gives you the documentation of elisp symbols.
+
+Use this when you are writing elisp code & want to find out about inbuilt symbols.
+
 ## Describe Variable `C-h v`
 Describe variable brings up the documentation about a variable by name.
 
