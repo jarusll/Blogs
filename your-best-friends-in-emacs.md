@@ -37,7 +37,7 @@ Describe variable brings up the documentation about a variable by name.
 I rarely use this as I am not an advanced user. But its good to have for customization.
 
 ## Where is?
-The `where-is` function returns you the keybind of a function. Use it when you want to know the function but not its keybind.
+The `where-is` function returns you the keybind of a function. Use it when you know the function but not its keybind.
 
 ## Completion engine & Minibuffer goodies
 I would recommend any completion engine which works out for you.
