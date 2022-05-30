@@ -2,6 +2,7 @@
 title: Show keybinds in minibuffer completions
 date: 2022-04-06
 tags: ["emacs"]
+draft: true
 ---
 
 # Show keybinds in minibuffer completions #

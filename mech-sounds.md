@@ -2,6 +2,7 @@
 title: Mechanical keyboard sounds
 date: 2022-04-06
 tags: ["checkout"]
+draft: true
 ---
 
 # Mechanical keyboard sounds #
