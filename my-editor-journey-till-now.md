@@ -31,7 +31,7 @@ I have recently been tinkering with smalltalk. The Pharo(or any smalltalk) IDE h
 And this made me change my mind. Its about time I did emacs properly.
 
 ## What do I plan to achieve?
-One day I will start my day by opening emacs and I'll end it by closing emacs.
+One day I will start my day by opening emacs and I'll end it by closing it.
 This is what I am aiming for.
 
 ## What about Vim?
