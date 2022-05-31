@@ -3,7 +3,7 @@ title = "Maximum subarray sum"
 author = ["Suraj Yadav"]
 date = 2022-05-31
 tags = ["solution"]
-draft = false
+draft = true
 +++
 
 ## Maximum Subarray Sum {#maximum-subarray-sum}
