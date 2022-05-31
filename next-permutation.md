@@ -63,3 +63,33 @@ draft = false
 
 -   Is `{2, 3, 1}` the next permutation after `{2, 1, 3}`?
     -   Yes
+
+-   Heres another, `{4, 6, 2, 3, 8, 5, 1}`
+
+| Arrangement             | Vacant |
+|-------------------------|--------|
+| `{4, 6, 2, 3, 8, 5, 1}` | `{}`   |
+
+-   Determining the strictly decreasing arrangement from end
+
+| Arrangement               | Vacant |
+|---------------------------|--------|
+| `{4, 6, 2, 3, *8, 5, 1*}` | `{}`   |
+
+-   Moving the strictly decreasing to Vacant space
+
+| Arrangement    | Vacant      |
+|----------------|-------------|
+| `{4, 6, 2, 3}` | `{8, 5, 1}` |
+
+-   `3` has run out of its arrangements, its successor in Vacant space is `5`. Replacing `3` with `5`
+
+| Arrangement    | Vacant      |
+|----------------|-------------|
+| `{4, 6, 2, 5}` | `{8, 3, 1}` |
+
+-   Sorting Vacant space and appending to Arrangement
+
+| Arrangement             | Vacant |
+|-------------------------|--------|
+| `{4, 6, 2, 5, 1, 3, 8}` | `{}`   |
