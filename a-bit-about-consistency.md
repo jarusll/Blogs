@@ -1,6 +1,7 @@
 ---
 title: A bit about Consistency
 date: 2022-03-20
+draft: true
 ---
 # A bit about Consistency
 
