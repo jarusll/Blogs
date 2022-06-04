@@ -29,8 +29,8 @@
   |-----------------+--------------------------------------------------------------------------------------------|
   | Action Name     | Action Description                                                                         |
   |-----------------+--------------------------------------------------------------------------------------------|
-  | START_quiz      | Starts the quiz, could be automatically triggered or through an action like a button press |
-  | end_quiz        | Ends the quiz, triggered when last question is submitted                                   |
-  | submit_question | Triggers when you submit a question                                                        |
-  | next_question   | Triggers when timer is run out or when user clicks =Next= button                           |
+  | START_QUIZ      | Starts the quiz, could be automatically triggered or through an action like a button press |
+  | END_QUIZ        | Ends the quiz, triggered when last question is submitted                                   |
+  | SUBMIT_QUESTION | Triggers when you submit a question                                                        |
+  | NEXT_QUESTION   | Triggers when timer is run out or when user clicks =Next= button                           |
   |-----------------+--------------------------------------------------------------------------------------------|
