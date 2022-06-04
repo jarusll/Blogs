@@ -34,3 +34,13 @@
   | SUBMIT_QUESTION | Triggers when you submit a question                                                        |
   | NEXT_QUESTION   | Triggers when timer is run out or when user clicks =Next= button                           |
   |-----------------+--------------------------------------------------------------------------------------------|
+* Reducers
+
+  Reducers to build application logic
+  |-------------------+-----------------------------------------+-------------------------------|
+  | Reducer           | Logic                                   | Shape                         |
+  |-------------------+-----------------------------------------+-------------------------------|
+  | scoreReducer      | Keep track of score ie Correct answers  | Integer                       |
+  | answerReducer     | Keep track of answers along with status | map<QuestionId, AnswerStatus> |
+  | unansweredReducer | Keep track of unanswered questions      | [Question.Text]               |
+  |-------------------+-----------------------------------------+-------------------------------|
