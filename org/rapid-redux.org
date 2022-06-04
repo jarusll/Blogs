@@ -1,0 +1,22 @@
+#+title: Rapid redux prototyping
+#+date: 2022-06-04 
+#+draft: true
+#+filetags: solution
+
+* Objectives
+  Create a quiz app wit react redux
+  It should
+  - Have questions with 4 choices
+  - Highlight the choice as wrong or right
+  - Have a timer, if the timer runs out skip the current question
+  - On result screen, show the score and unanswered questions
+
+* Actions in the app
+  |-----------------+--------------------------------------------------------------------------------------------|
+  | Action Name     | Action Description                                                                         |
+  |-----------------+--------------------------------------------------------------------------------------------|
+  | START_quiz      | Starts the quiz, could be automatically triggered or through an action like a button press |
+  | end_quiz        | Ends the quiz, triggered when last question is submitted                                   |
+  | submit_question | Triggers when you submit a question                                                        |
+  | next_question   | Triggers when timer is run out or when user clicks =Next= button                           |
+  |-----------------+--------------------------------------------------------------------------------------------|
