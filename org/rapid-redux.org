@@ -34,6 +34,53 @@
   | SUBMIT_QUESTION | Triggers when you submit a question                                                        |
   | NEXT_QUESTION   | Triggers when timer is run out or when user clicks =Next= button                           |
   |-----------------+--------------------------------------------------------------------------------------------|
+
+  #+BEGIN_SRC js
+export const start_quiz = "START_QUIZ"
+export const end_quiz = "END_QUIZ"
+export const submit_answer = "SUBMIT_ANSWER"
+export const next_question = "NEXT_QUESTION"
+  #+END_SRC
+
+** Action Creators
+
+   #+BEGIN_SRC js
+function startQuiz(questions){
+    return {
+	type: START_QUIZ,
+	payload: {
+	    questions
+	}
+    }
+}
+
+function endQuiz(){
+    return {
+	type: END_QUIZ
+    }
+}
+
+function submitAnswer(id, status){
+    return {
+	type: END_QUIZ
+	payload: {
+	    questionID: id
+	    answerStatus: status
+	}
+    }
+}
+
+function nextQuestion(){
+    return {
+	type: NEXT_QUESTION
+	payload: {
+	    questionID: id
+	    answerStatus: status
+	}
+    }
+}
+   #+END_SRC
+
 * Reducers
 
   Reducers to build application logic
