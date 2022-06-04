@@ -6,41 +6,59 @@
 * Objectives
   Create a quiz app wit react redux
   It should
-  - Have questions with 4 choices
-  - Highlight the choice as wrong or right
-  - Have a timer, if the timer runs out skip the current question
+  - Have questions with multiple choices
   - On result screen, show the score and unanswered questions
 
-* Types
 
-  |--------------+--------------------------------------------------------------------------|
-  | Name         | Shape                                                                    |
-  |--------------+--------------------------------------------------------------------------|
-  | Quiz         | [Question, ...]                                                          |
-  | QuestionID   | Integer                                                                  |
-  | AnswerID     | Integer                                                                  |
-  | Question     | { id: QuestionID, text: String, options: [Option, ...], answer: AnswerID |
-  | Option       | { id: Integer, text: String }                                            |
-  | AnswerStatus | CORRECT, WRONG, UNANSWERED                                               |
-  |--------------+--------------------------------------------------------------------------|
+* Types
+  
+  |--------------+----------------------------------------------------------------------------|
+  | Name         | Shape                                                                      |
+  |--------------+----------------------------------------------------------------------------|
+  | Quiz         | [Question, ...]                                                            |
+  | QuizStatus   | STARTED | FINISHED                                                         |
+  | Question     | { id: QuestionID, text: String, options: [Option, ...], answer: AnswerID } |
+  | QuestionID   | Integer                                                                    |
+  | Option       | { id: OptionID, text: String }                                             |
+  | OptionID     | Integer                                                                    |
+  | AnswerStatus | CORRECT | WRONG | UNANSWERED                                               |
+  |--------------+----------------------------------------------------------------------------|
 
 
 * Actions in the app
-  |-----------------+--------------------------------------------------------------------------------------------|
-  | Action Name     | Action Description                                                                         |
-  |-----------------+--------------------------------------------------------------------------------------------|
-  | START_QUIZ      | Starts the quiz, could be automatically triggered or through an action like a button press |
-  | END_QUIZ        | Ends the quiz, triggered when last question is submitted                                   |
-  | SUBMIT_QUESTION | Triggers when you submit a question                                                        |
-  | NEXT_QUESTION   | Triggers when timer is run out or when user clicks =Next= button                           |
-  |-----------------+--------------------------------------------------------------------------------------------|
 
-  #+BEGIN_SRC js
+**  What are actions?
+
+**  How to decide actions?
+   Actions consists of
+   - User interactions in the app
+   - Events in the app during its lifecycle
+
+
+*** What are the events in the quiz?
+    - Start the quiz
+    - End the quiz
+
+*** What are the user interactions?    
+    - Submit answer by checking the radio button
+    - Next question to skip the current question
+
+** Actions
+   |-----------------+--------------------------------------------------------------------------------------------|
+   | Action Name     | Action Description                                                                         |
+   |-----------------+--------------------------------------------------------------------------------------------|
+   | START_QUIZ      | Starts the quiz, could be automatically triggered or through an action like a button press |
+   | END_QUIZ        | Ends the quiz, triggered when last question is submitted                                   |
+   | SUBMIT_QUESTION | Triggers when you submit a question                                                        |
+   | NEXT_QUESTION   | Triggers when timer is run out or when user clicks =Next= button                           |
+   |-----------------+--------------------------------------------------------------------------------------------|
+
+   #+BEGIN_SRC js
 export const start_quiz = "START_QUIZ"
 export const end_quiz = "END_QUIZ"
 export const submit_answer = "SUBMIT_ANSWER"
 export const next_question = "NEXT_QUESTION"
-  #+END_SRC
+   #+END_SRC
 
 ** Action Creators
 
