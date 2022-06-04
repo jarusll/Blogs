@@ -11,6 +11,20 @@
   - Have a timer, if the timer runs out skip the current question
   - On result screen, show the score and unanswered questions
 
+* Types
+
+  |--------------+--------------------------------------------------------------------------|
+  | Name         | Shape                                                                    |
+  |--------------+--------------------------------------------------------------------------|
+  | Quiz         | [Question, ...]                                                          |
+  | QuestionID   | Integer                                                                  |
+  | AnswerID     | Integer                                                                  |
+  | Question     | { id: QuestionID, text: String, options: [Option, ...], answer: AnswerID |
+  | Option       | { id: Integer, text: String }                                            |
+  | AnswerStatus | CORRECT, WRONG, UNANSWERED                                               |
+  |--------------+--------------------------------------------------------------------------|
+
+
 * Actions in the app
   |-----------------+--------------------------------------------------------------------------------------------|
   | Action Name     | Action Description                                                                         |
