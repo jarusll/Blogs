@@ -124,7 +124,11 @@ const counterSlice = createSlice({
 })
     #+END_SRC
 
+  How do we access the reducer & actions in the slice?
   #+BEGIN_SRC javascript
+  const {actions, reducer} = counterSlice
+  console.log(actions) // { increment, decrement }
+  
   #+END_SRC
 
   *From this point on, =reducers= and =slices= may be used interchangably*
@@ -148,27 +152,21 @@ const counterSlice = createSlice({
   - The store is the global state
 
   How do you make a store?
-
-  const store = redux.createStore(rootReducer)
-
-  What is rootReducer?
-  - All reducers combined as 1 reducer
-
-  How do you combine reducers?
-  - Reducers available = =[red1, red2, ...]=
-    #+BEGIN_SRC javascript
-const rootReducer = redux.combineReducers({
-    key1: red1,
-    key2: red2,
-    ...
+  #+BEGIN_SRC javascript
+const { configureStore } = require('@reduxjs/toolkit')
+const store = redux.createStore({
+    reducer: {
+	count: counterSlice.reducer
+    }
 })
-    #+END_SRC
+  #+END_SRC
 
   How do you change state?
   - By dispatching actions
     #+BEGIN_SRC javascript
-store.dispatch(addPost({
-    "tags": ["primer"]
-    "text": "What do you start with?..."
-})    
+const { increment } = counterSlice.actions
+store.dispatch(increment())    
     #+END_SRC
+
+  Has =redux= come a long way?
+  - Yes, thanks =@reduxjs/toolkit=
