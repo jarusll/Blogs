@@ -50,12 +50,18 @@ function addPost({tags, text}){
 }
     #+END_SRC
 
-  How about the action names?
-  - We can define them as constants 
-
+  Can we do better?
+  - Yes, `createAction`, thanks `redux toolkit`
     #+BEGIN_SRC javascript
-const ADD_POST = "ADD_POST" 
+    const addPost = createAction('ADD_POST')
     #+END_SRC
+
+    #+BEGIN_EXAMPLE
+addPost(x) => {
+    type: "ADD_POST",
+    payload: x
+}
+    #+END_EXAMPLE
 
   Whats the next step?
   - =Reducers=
