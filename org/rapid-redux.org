@@ -1,111 +1,123 @@
-#+title: Rapid redux prototyping
+#+title: Redux Primer
 #+date: 2022-06-04 
 #+draft: true
 #+filetags: solution
 
-* Objectives
-  Create a quiz app wit react redux
-  It should
-  - Have questions with multiple choices
-  - On result screen, show the score and unanswered questions
+* Redux primer
 
+  What do you start with?
+  - Actions
 
-* Types
-  
-  |--------------+----------------------------------------------------------------------------|
-  | Name         | Shape                                                                      |
-  |--------------+----------------------------------------------------------------------------|
-  | Quiz         | [Question, ...]                                                            |
-  | QuizStatus   | STARTED | FINISHED                                                         |
-  | Question     | { id: QuestionID, text: String, options: [Option, ...], answer: AnswerID } |
-  | QuestionID   | Integer                                                                    |
-  | Option       | { id: OptionID, text: String }                                             |
-  | OptionID     | Integer                                                                    |
-  | AnswerStatus | CORRECT | WRONG | UNANSWERED                                               |
-  |--------------+----------------------------------------------------------------------------|
+  What are =Actions=?
+  - User interactable actions
+  - Events in the application logic
 
+  What does an action look like?
+  - Its a javascript object
+    #+BEGIN_SRC json
+{
+    "type": String,
+    "payload": JSONValue
+}
+    #+END_SRC
 
-* Actions in the app
+  - The =type= is a string constant typically representing an action name
+  - The =payload= is the data associated with the action event
 
-**  What are actions?
-
-**  How to decide actions?
-   Actions consists of
-   - User interactions in the app
-   - Events in the app during its lifecycle
-
-
-*** What are the events in the quiz?
-    - Start the quiz
-    - End the quiz
-
-*** What are the user interactions?    
-    - Submit answer by checking the radio button
-    - Next question to skip the current question
-
-** Actions
-   |-----------------+--------------------------------------------------------------------------------------------|
-   | Action Name     | Action Description                                                                         |
-   |-----------------+--------------------------------------------------------------------------------------------|
-   | START_QUIZ      | Starts the quiz, could be automatically triggered or through an action like a button press |
-   | END_QUIZ        | Ends the quiz, triggered when last question is submitted                                   |
-   | SUBMIT_QUESTION | Triggers when you submit a question                                                        |
-   | NEXT_QUESTION   | Triggers when timer is run out or when user clicks =Next= button                           |
-   |-----------------+--------------------------------------------------------------------------------------------|
-
-   #+BEGIN_SRC js
-export const start_quiz = "START_QUIZ"
-export const end_quiz = "END_QUIZ"
-export const submit_answer = "SUBMIT_ANSWER"
-export const next_question = "NEXT_QUESTION"
-   #+END_SRC
-
-** Action Creators
-
-   #+BEGIN_SRC js
-function startQuiz(questions){
-    return {
-	type: START_QUIZ,
-	payload: {
-	    questions
-	}
+  Eg
+  #+BEGIN_SRC json
+{
+    "type": "ADD_POST",
+    "payload": {
+	"tags": ["primer"]
+	"text": "What do you start with?..."
     }
 }
+  #+END_SRC
 
-function endQuiz(){
+  Would it be convenient if we had helper functions to create the action objects?
+  - Yes, they are called action creators
+
+    #+BEGIN_SRC javascript
+function addPost({tags, text}){
     return {
-	type: END_QUIZ
+	tags,
+	text
     }
 }
+    #+END_SRC
 
-function submitAnswer(id, status){
-    return {
-	type: END_QUIZ
-	payload: {
-	    questionID: id
-	    answerStatus: status
-	}
+  How about the action names?
+  - We can define them as constants 
+
+    #+BEGIN_SRC javascript
+const ADD_POST = "ADD_POST" 
+    #+END_SRC
+
+  Whats the next step?
+  - =Reducers=
+
+  What are reducers?
+  - Reducers manage your state using =prevstate= and =action= to give you =nextstate=
+
+  - =PrevState + Action => NextState=
+
+  What do they look like?
+  - Here's a trivial example of a reducer
+    #+BEGIN_SRC javascript
+const initialState = 0
+function counterReducer(state = initialState, action){
+    switch(action.type){
+    case "INCREMENT":
+	return state + 1
+    case "DECREMENT":
+	return state - 1
+    default:
+	return state
     }
 }
+    #+END_SRC
 
-function nextQuestion(){
-    return {
-	type: NEXT_QUESTION
-	payload: {
-	    questionID: id
-	    answerStatus: status
-	}
-    }
+  How to decide what reducers to make?
+  - Every reducer in the store(global state) is associated with a key
+
+  Eg - The value returned by =counterReducer= will be associated with key =count= in global state.
+  #+BEGIN_SRC json
+{
+    "count": counterReducer
 }
-   #+END_SRC
+  #+END_SRC
 
-* Reducers
+  - So one good way to figure out the reducers is by determining the states you will access.
 
-  Reducers to build application logic
-  |-------------------+-----------------------------------------+-------------------------------|
-  | Reducer           | Logic                                   | Shape                         |
-  |-------------------+-----------------------------------------+-------------------------------|
-  | scoreReducer      | Keep track of score ie Correct answers  | Integer                       |
-  | answerReducer     | Keep track of answers along with status | map<QuestionId, AnswerStatus> |
-  | unansweredReducer | Keep track of unanswered questions      | [Question.Text]               |
-  |-------------------+-----------------------------------------+-------------------------------|
+  Whats the next part?
+  - =Store=
+
+  Whats a store?
+  - The store is the global state
+
+  How do you make a store?
+
+  const store = redux.createStore(rootReducer)
+
+  What is rootReducer?
+  - All reducers combined as 1 reducer
+
+  How do you combine reducers?
+  - Reducers available = =[red1, red2, ...]=
+    #+BEGIN_SRC javascript
+const rootReducer = redux.combineReducers({
+    key1: red1,
+    key2: red2,
+    ...
+})
+    #+END_SRC
+
+  How do you change state?
+  - By dispatching actions
+    #+BEGIN_SRC javascript
+store.dispatch(addPost({
+    "tags": ["primer"]
+    "text": "What do you start with?..."
+})    
+    #+END_SRC
