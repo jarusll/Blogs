@@ -51,7 +51,7 @@ function addPost({tags, text}){
     #+END_SRC
 
   Can we do better?
-  - Yes, `createAction`, thanks `redux toolkit`
+  - Yes, =createAction=, thanks =@reduxjs/toolkit=
     #+BEGIN_SRC javascript
     const addPost = createAction('ADD_POST')
     #+END_SRC
@@ -86,6 +86,48 @@ function counterReducer(state = initialState, action){
     }
 }
     #+END_SRC
+    
+  Can we do better?
+  - Yes, =createReducer=, thanks again =@reduxjs/toolkit=
+    
+  #+BEGIN_SRC javascript
+const { createAction, createReducer } = require('@reduxjs/toolkit')
+
+const increment = createAction('counter/increment')
+const decrement = createAction('counter/decrement')
+
+const initialState = 0
+const counterReducer = createReducer(initialState, (builder) => {
+    builder
+	.addCase(increment, (state, action) => state + 1)
+	.addCase(decrement, (state, action) => state - 1)
+}) 
+  #+END_SRC
+
+  Can we couple counter actions & counter reducer for convenience?
+  - Yes, its called a slice
+
+  Why is it called slice?
+  - Because they are a slice of the global state
+
+    #+BEGIN_SRC javascript
+const { createSlice } = require('@reduxjs/toolkit')
+
+const initialState = 0
+const counterSlice = createSlice({
+    name: 'counter',
+    initialState,
+    reducers: {
+	increment: (state) => state + 1,
+	decrement: (state) => state - 1
+    },
+})
+    #+END_SRC
+
+  #+BEGIN_SRC javascript
+  #+END_SRC
+
+  *From this point on, =reducers= and =slices= may be used interchangably*
 
   How to decide what reducers to make?
   - Every reducer in the store(global state) is associated with a key
