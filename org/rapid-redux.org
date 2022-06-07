@@ -41,8 +41,11 @@
     #+BEGIN_SRC javascript
 function addPost({tags, text}){
     return {
-	tags,
-	text
+	type: "ADD_POST",
+	payload: {
+	    tags,
+	    text
+	}
     }
 }
     #+END_SRC
