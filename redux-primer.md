@@ -4,6 +4,7 @@ author = ["Suraj Yadav"]
 date = 2022-06-04
 tags = ["primer"]
 draft = false
+badge = "[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jarusll/notebooks.git/master?labpath=%2Fredux-primer.ipynb)"
 +++
 
 ## Redux primer {#redux-primer}
