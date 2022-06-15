@@ -1,0 +1,156 @@
+#+title: Making a compiler - Part 1 - Grammer & Literals
+#+date: 2022-06-15 
+#+draft: false
+#+filetags: solution
+
+- What is lambda calculus?
+  - It is a model of computation equivalent to turing machines.
+
+- What does it look like?
+  - A square function in lambda calculus applied to argument =7=
+
+  =λ x . x * x . 7= 
+
+- What is [[http://xahlee.info/parser/bnf_ebnf_abnf.html][EBNF]] notation?
+  - Its a notation for describing syntaxes
+
+- What does it look like?
+  - For fullname syntax
+  #+BEGIN_SRC bnf
+  <fullname> = <firstname> <lastname>
+  <firstname> = <string>
+  <lastname> = <string>
+  <string> = <character>:+
+  <character> = [a-zA-Z]
+  #+END_SRC
+
+- What is EBNF notation for lambda calculus?
+  #+BEGIN_SRC bnf
+  <λexp> = <var>
+    | λ<var> . <λexp>
+    | ( <λexp> <λexp> )
+  #+END_SRC
+
+  | Lambda Calculus     | Action      | Other Programming Languages |
+  |---------------------+-------------+-----------------------------|
+  | =<var>=             | literal     | Literal value               |
+  | =λ<var> . <λexp>=   | abstraction | Function definition         |
+  | =( <λexp> <λexp> )= | application | Calling a function          |
+
+- What are literals?
+  - They are explicit constants.
+  Some examples
+  - =1=
+  - ="a string"=
+  - =["an", "array", "with", null, "and", true]=
+
+- What is an abstraction?
+  - Its a form of function definition
+  Example
+  =let INCREMENT =λ x . x + 1=
+
+- What is an application?
+  - Invocation of a function is called application
+
+- What is a lexer?
+  - Lexer is one of the components of a compiler followed by Parser
+
+- What is its purpose?
+  - Break down the program into tokens
+
+- Could you give an example?
+  - A trivial example would be
+
+  =Lexer("if (x = 1) then true else false))= Returns
+
+  #+BEGIN_SRC json
+{
+    "type": "conditional",
+    "condition": "x == 1",
+    "then_clause": true,
+    "else_clause": false
+}
+  #+END_SRC
+
+- What is our purpose? 
+  - Layout the grammar(EBNF notation) for literals in our language
+
+- What is our weapon of choice? 
+  - =nearley= - [[https://nearley.js.org/][Docs]]
+
+- What should we name our language? 
+  - =nearley-lambda=
+
+- Lets start with numbers. How shall we match numbers?
+  - A number is a digit, any from [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+  #+BEGIN_SRC bnf :name hello
+  <digit> = [0-9]
+  #+END_SRC
+
+ 
+- Can a number have multiple digits? 
+  - Yes
+
+- How can we match multiple digits? 
+  - By using recursion. =|= represents conjunction
+
+  digits could be a single digit or a digit followed by digits
+  #+BEGIN_SRC bnf :tangle yes
+  <digits> = <digit> | <digit> <digits>
+  #+END_SRC
+
+- What about Real numbers?
+
+  #+BEGIN_SRC bnf
+  <real> = <digits> "." <digits>
+  #+END_SRC
+  Since reals are a sequence of numbers followed a =.= and then numbers again
+
+- What about booleans?
+
+  #+BEGIN_SRC bnf
+  <boolean> = "true" | "false"
+  #+END_SRC
+  
+- What about strings?
+  - Strings are a sequence of characters between ="=
+  #+BEGIN_SRC bnf
+  <string> = '"' <characters> '"'
+  #+END_SRC
+
+  - Characters could be 1 character or a character followed by characters
+  #+BEGIN_SRC bnf
+  <characters> = <character> | <character> <characters>
+  #+END_SRC
+
+  - A character could be anything =a to z= or =A to Z=
+  #+BEGIN_SRC bnf
+  <character> = [a-zA-Z]
+  #+END_SRC
+  
+- How about representing null ie empty values?
+
+  #+BEGIN_SRC bnf
+  <null> = "null" 
+  #+END_SRC
+  
+- What about arrays, ie a collection of values?
+
+  - Array elements are enclosed within =[= and =]= 
+  #+BEGIN_SRC bnf
+  <array> = "[" <array_elements> "]" 
+  #+END_SRC
+
+  - Array elements could be 1 element or a multiple elements seperated by =,=
+  #+BEGIN_SRC bnf
+  <array_elements> = <array_element> | <array_element> "," <array_elements>
+  #+END_SRC
+
+  - An array element is a literal
+  #+BEGIN_SRC bnf
+  <array_element> = <literal>
+  <literal> = <number> | <string> | <boolean> | <null> | <array>
+  #+END_SRC
+
+  
