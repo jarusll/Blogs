@@ -7,15 +7,39 @@
   It is a model of computation equivalent to turing machines.
 
 * What is the purpose of lambda calculus?
-  
+
+
 * What does it look like?
   \begin{equation}
   (\lambda x = x * x) 2 => 2 * 2 => 4
   \end{equation}
 
-* What is EBNF notation?
+* What is [[http://xahlee.info/parser/bnf_ebnf_abnf.html][EBNF]] notation?
+  Its a notation for describing syntaxes
+
+* What does it look like?
+  For fullname syntax
+  #+BEGIN_SRC 
+  <fullname> = <firstname> <lastname>
+  <firstname> = <string>
+  <lastname> = <string>
+  <string> = <character>:+
+  <character> = [a-zA-Z]
+  #+END_SRC
 
 * What is EBNF grammer for lambda calculus?
+  
+  #+BEGIN_SRC bnf
+  <λexp>::= <var>
+    | λ<var> . <λexp>
+    | ( <λexp> <λexp> )
+  #+END_SRC
+
+  | Lambda Calculus     | Action      | Other Programming Languages |
+  |---------------------+-------------+-----------------------------|
+  | =<var>=             | literal     | Literal value               |
+  | =λ<var> . <λexp>=   | abstraction | Function definition         |
+  | =( <λexp> <λexp> )= | application | Calling a function          |
 
 * What are literals?
 
