@@ -75,12 +75,6 @@
 - What is our purpose? 
   - Layout the grammar(EBNF notation) for literals in our language
 
-- What is our weapon of choice? 
-  - =nearley= - [[https://nearley.js.org/][Docs]]
-
-- What should we name our language? 
-  - =nearley-lambda=
-
 - Lets start with numbers. How shall we match numbers?
   - A number is a digit, any from [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -93,7 +87,7 @@
   - Yes
 
 - How can we match multiple digits? 
-  - By using recursion. =|= represents conjunction
+  - By using recursion. =|= represents alternation
 
   digits could be a single digit or a digit followed by digits
   #+BEGIN_SRC bnf :tangle yes
