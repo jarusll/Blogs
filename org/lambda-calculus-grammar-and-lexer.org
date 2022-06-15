@@ -1,0 +1,83 @@
+#+title: Lambda Calculus - Grammer and Lexer
+#+date: 2022-06-15 
+#+draft: true
+#+filetags: solution
+
+* What is lambda calculus?
+  It is a model of computation equivalent to turing machines.
+
+* What is the purpose of lambda calculus?
+  
+* What does it look like?
+  \begin{equation}
+  (\lambda x = x * x) 2 => 2 * 2 => 4
+  \end{equation}
+
+* What is EBNF notation?
+
+* What is EBNF grammer for lambda calculus?
+
+* What are literals?
+
+* What is an abstraction?
+
+* What is an application?
+
+* What is a lexer?
+
+* What is its purpose?
+
+* Could you give an example?
+
+* What is our purpose? Make a basic lambda calculus compiler
+
+* What is our weapon of choice? nearley
+
+* What should we name our language? nearley-lambda
+
+* Lets start with numbers. How shall match numbers?
+  A number is a digit, any from [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+ 
+* Can a number have multiple digits? 
+  Yes
+
+* How can we match multiple digits? 
+  By using recursion. =|= represents conjunction
+  =digits -> digit | digit digits=
+
+* What about Real numbers?
+  =real -> digits "." digits=
+  Since reals are a sequence of numbers followed a =.= and then numbers again
+
+* What about booleans?
+  #+BEGIN_SRC bnf
+boolean = "true" | "false"
+  #+END_SRC
+  
+* What about strings?
+  Strings are a sequence of characters between ="=
+  #+BEGIN_SRC bnf
+ string = '"' characters '"'
+ characters = character | character characters
+ character = [a-zA-Z]
+  #+END_SRC
+  The =[a-zA-Z]= is similar to regex classes but its not regex.
+  
+* How about representing null ie empty values?
+  #+BEGIN_SRC bnf
+ null -> "null" 
+  #+END_SRC
+  
+* What about arrays, ie a collection of values?
+  Array elements are enclosed within =[= and =]= and an array contains =literals=
+  
+* What are literal values?
+  Literals are fixed constants
+
+  #+BEGIN_SRC bnf
+ array = "[" array_elements "]" 
+ array_elements = array_element | array_element "," array_elements
+ array_element = literal
+ literal = number | string | boolean | null | array
+  #+END_SRC
+
