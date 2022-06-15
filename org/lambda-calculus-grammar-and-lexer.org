@@ -1,4 +1,4 @@
-#+title: Lambda Calculus - Grammer and Lexer
+#+title: Lambda Calculus - Grammer
 #+date: 2022-06-15 
 #+draft: true
 #+filetags: solution
@@ -42,66 +42,101 @@
   | =( <λexp> <λexp> )= | application | Calling a function          |
 
 * What are literals?
+  They are explicit constants.
+  Some examples
+  - =1=
+  - ="a string"=
+  - =["an", "array", "with", null, "and", true]=
 
 * What is an abstraction?
+  Its a form of function definition
+  Example
+  =let INCREMENT =λ x . x + 1=
 
 * What is an application?
+  Its calling a function
 
 * What is a lexer?
+  Lexer is one of the components of a compiler followed by Parser
 
 * What is its purpose?
+  Break down the program into tokens
 
 * Could you give an example?
+  A trivial example would be
+  =Lexer("if (x == 1) then true else false))=
+  #+BEGIN_SRC json
+{
+    "type": "conditional",
+    "condition": "x == 1",
+    "then_clause": true,
+    "else_clause": false
+}
+  #+END_SRC
 
-* What is our purpose? Make a basic lambda calculus compiler
+* What is our purpose? 
+  Layout the grammar(EBNF notation) for our language
 
-* What is our weapon of choice? nearley
+* What is our weapon of choice? 
+  =nearley= - [[https://nearley.js.org/][Docs]]
 
-* What should we name our language? nearley-lambda
+* What should we name our language? 
+  =nearley-lambda=
 
 * Lets start with numbers. How shall match numbers?
   A number is a digit, any from [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  #+BEGIN_SRC bnf
+  <digit> = [0-9]
+  #+END_SRC
  
 * Can a number have multiple digits? 
   Yes
 
 * How can we match multiple digits? 
   By using recursion. =|= represents conjunction
-  =digits -> digit | digit digits=
+  #+BEGIN_SRC bnf
+  <digits> = <digit> | <digit> <digits>
+  #+END_SRC
 
 * What about Real numbers?
-  =real -> digits "." digits=
+  #+BEGIN_SRC bnf
+  <real> = <digits> "." <digits>
+  #+END_SRC
   Since reals are a sequence of numbers followed a =.= and then numbers again
 
 * What about booleans?
   #+BEGIN_SRC bnf
-boolean = "true" | "false"
+  <boolean> = "true" | "false"
   #+END_SRC
   
 * What about strings?
   Strings are a sequence of characters between ="=
   #+BEGIN_SRC bnf
- string = '"' characters '"'
- characters = character | character characters
- character = [a-zA-Z]
+  <string> = '"' <characters> '"'
+  <characters> = <character> | <character> <characters>
+  <character> = [a-zA-Z]
   #+END_SRC
-  The =[a-zA-Z]= is similar to regex classes but its not regex.
   
 * How about representing null ie empty values?
   #+BEGIN_SRC bnf
- null -> "null" 
+  <null> = "null" 
   #+END_SRC
   
 * What about arrays, ie a collection of values?
   Array elements are enclosed within =[= and =]= and an array contains =literals=
   
-* What are literal values?
-  Literals are fixed constants
-
   #+BEGIN_SRC bnf
- array = "[" array_elements "]" 
- array_elements = array_element | array_element "," array_elements
- array_element = literal
- literal = number | string | boolean | null | array
+  <array> = "[" <array_elements> "]" 
+  <array_elements> = <array_element> | <array_element> "," <array_elements>
+  <array_element> = <literal>
+  <literal> = <number> | <string> | <boolean> | <null> | <array>
   #+END_SRC
 
+* What is currying?
+  
+
+* How do you express an abstraction?
+  
+  #+BEGIN_SRC bnf
+  abstraction = "lambda" variable "." expression
+  #+END_SRC
