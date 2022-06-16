@@ -66,7 +66,7 @@
   #+BEGIN_SRC json
 {
     "type": "conditional",
-    "condition": "x == 1",
+    "condition": "x = 1",
     "then_clause": true,
     "else_clause": false
 }
