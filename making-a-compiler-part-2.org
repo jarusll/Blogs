@@ -10,12 +10,15 @@
   - Calculator and a List Processor
     
 - What operations does a Calculator support?
+  - =Negation= -> =- Number=
   - =Groupings= -> =( <Expression> )=
   - =Additives= -> =+= | =-=
   - =Multiplicatives= -> =*= | =/=
   - =Exponents= -> =^=
+
+    We will also support Comparatives & Booleans for our language
   - =Comparatives= -> =>= | =<= | => == | =< == | ==== | =! ==
-  - =Booleans= -> =and= | =or= | =not=
+  # - =Booleans= -> =and= | =or= | =not=
   
 - Does the order matter in =a + b + c=?
   - No, =(a + b) + c= is equal to =a + (b + c)=
@@ -29,6 +32,7 @@
 - Lets tabulate it for our language
   - The precedence is from top to bottom. Our language will support Comparatives and Booleans as well
     
+    | Negation        |
     | Groupings       |
     | Exponents       |
     | Multiplicatives |
@@ -44,19 +48,21 @@
   *ASSUMPTION BEGIN*
 
   - By specifying the exact same
+
   #+BEGIN_SRC bnf
-  <input> = <additive>
-  <additive> = <multiplicative> <additive_operator> <multiplicative>
-  <additive_operator> = "+" | "-"
+  input -> additive
+  additive -> multiplicative additive_operator multiplicative
+  additive_operator -> "+" | "-"
   #+END_SRC
+
   Additive will pass the execution to Multiplicatives. When Multiplicatives are done executing and return the result, additives will execute itself
 
   - How do we solve multiplicatives?
     - Solving multiplicatives should be easy since the operands will be primitives(For the assumed case ie language only supporting additives & multiplicatives)
 
     #+BEGIN_SRC bnf
-    <multiplicative> = <number> <multiplicative_operator> <number>
-    <multiplicative_operator> => "*" | "/"
+    multiplicative -> number multiplicative_operator number
+    multiplicative_operator -> "*" | "/"
     #+END_SRC
     
     - How will this grammar generate the tree for the expression =1 * 4 + 7 / 9=
@@ -93,8 +99,8 @@
   - How can we do that?
     - By redefining the operations to support single argument
     #+BEGIN_SRC bnf
-    <additive> = <multiplicative> <additive_operator> <multiplicative> | <multiplicative>
-    <multiplicative> = <number> <multiplicative_operator> <number> | <number>
+    additive -> multiplicative additive_operator multiplicative | multiplicative
+    multiplicative -> number multiplicative_operator number | number
     #+END_SRC
 
     - Continuing execution
