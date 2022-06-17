@@ -3,6 +3,8 @@
 #+draft: false
 #+filetags: solution
 
+*NOTE: [[https://omrelli.ug/nearley-playground/][Nearley Playground]]*
+
 - What is lambda calculus?
   - It is a model of computation equivalent to turing machines.
 
