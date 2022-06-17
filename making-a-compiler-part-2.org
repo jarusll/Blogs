@@ -127,9 +127,40 @@
   - What about the highest priority operations?
     - They will be the termination point
 
-  - Can we say that the highest priority operation will be close to the primitives?
-    - Yes, because It will resolve itself first
+    | Negation        |
+    | Groupings       |
+    | Exponents       |
+    | Multiplicatives |
+    | Additives       |
+    | Comparatives    |
+    | Booleans        |
+
+    Using the previous observations
     
+    An expression could be either unary or binary
+    #+BEGIN_SRC bnf
+    expression -> unary | binary
+    #+END_SRC
+    Unary has more priority than binary
+    
+    Unary operations are
+    #+BEGIN_SRC bnf
+    unary -> negation | grouping | number
+    negation -> "-" number
+    grouping -> "(" expression ")"
+    number -> [0-9]:+
+    #+END_SRC
+
+    Binary operations could be additive or comparative cascading from Comparative => Additive => Multiplicative => Exponent and back to Unary
+    #+BEGIN_SRC bnf
+    binary -> additive | comparative
+    comparative -> additive comparative_op additive | additive
+    comparative_op -> ">" | "<"
+    additive -> multiplicative additive_op multiplicative | multiplicative
+    additive_op -> "+" | "-"
+    multiplicative -> exponent multiplicative_op exponent | exponent
+    exponent -> unary "^" unary | unary
+    #+END_SRC
 
 - What operations does a List Processor support?
   - First -> Returns the first elements
@@ -147,3 +178,10 @@
 - Whats the Rest of an empty list?
   - We don't ask that as well
 
+- So how can we represent List processor operations?
+  #+BEGIN_SRC bnf
+  List_op -> First | Rest | Cons
+  First -> "first" array
+  Rest -> "rest" array
+  Cons -> "cons" array
+  #+END_SRC
