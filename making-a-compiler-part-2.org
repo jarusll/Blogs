@@ -10,11 +10,12 @@
   - Calculator and a List Processor
     
 - What operations does a Calculator support?
-  - Additives -> + | -
-  - Multiplicatives -> * | /
-  - Exponents -> ^
-  - Comparatives -> > | < | >= | <= | == | ! =
-  - Booleans -> and | or | not
+  - =Groupings= -> =( <Expression> )=
+  - =Additives= -> =+= | =-=
+  - =Multiplicatives= -> =*= | =/=
+  - =Exponents= -> =^=
+  - =Comparatives= -> =>= | =<= | => == | =< == | ==== | =! ==
+  - =Booleans= -> =and= | =or= | =not=
   
 - Does the order matter in =a + b + c=?
   - No, =(a + b) + c= is equal to =a + (b + c)=
@@ -23,10 +24,10 @@
   - Yes, =a + (b * c)= is the correct order
     
 - What is the operator precedence in Math?
-  - Groupings Exponents then Multiplicatives then Additives
+  - Groupings then Exponents then Multiplicatives then Additives
     
 - Lets tabulate it for our language
-  - The precedence is from top to bottom.
+  - The precedence is from top to bottom. Our language will support Comparatives and Booleans as well
     
     | Groupings       |
     | Exponents       |
@@ -44,6 +45,7 @@
 
   - By specifying the exact same
   #+BEGIN_SRC bnf
+  <input> = <additive>
   <additive> = <multiplicative> <additive_operator> <multiplicative>
   <additive_operator> = "+" | "-"
   #+END_SRC
@@ -59,22 +61,30 @@
     
     - How will this grammar generate the tree for the expression =1 * 4 + 7 / 9=
 
-	|----------------+----------------|
-	| 1 * 4          | 7 / 9          |
-	| Multiplicative | Multiplicative |
-	|----------------+----------------|
-
-	|-------------------|
-	| (1 * 4) + (7 / 9) |
-	| Additive          |
-	|-------------------|
+#+BEGIN_EXAMPLE
+1 * 4 + 7 / 9 => Additive => Multiplicative Additive_Operator Multiplicative
+├── 1 * 4 => Multiplicative => Number Multiplicative_Operator Number
+│   ├── 1 
+│   ├── *
+│   └── 4
+├── +
+└── 7 / 9 => Multiplicative => Number Multiplicative_Operator Number 
+    ├── 7
+    ├── /
+    └── 9
+#+END_EXAMPLE
     
     - How about =1 * 4 + 7=?
 
-	|----------------+---|
-	| 1 * 4          | 7 |
-	| Multiplicative | ? |
-	|----------------+---|
+#+BEGIN_EXAMPLE
+7 / 1 + 8 => Additive => Multiplicative Additive_Operator Multiplicative
+├── 7 / 1 => Multiplicative => Number Multiplicative_Operator Number
+│   ├── 7
+│   ├── /
+│   └── 1
+├── +
+└── 8 => ?
+#+END_EXAMPLE
       - We hit a roadblock
 
     - How do we resolve this?
@@ -86,8 +96,34 @@
     <additive> = <multiplicative> <additive_operator> <multiplicative> | <multiplicative>
     <multiplicative> = <number> <multiplicative_operator> <number> | <number>
     #+END_SRC
+
+    - Continuing execution
+
+#+BEGIN_EXAMPLE
+7 / 1 + 8 => Additive => Multiplicative Additive_Operator Multiplicative
+├── 7 / 1 => Multiplicative => Number Multiplicative_Operator Number
+│   ├── 7
+│   ├── /
+│   └── 1
+├── +
+└── 8 => Additive => Multiplicative => Number
+#+END_EXAMPLE
+
+  *ASSUMPTION END*
   
-- From the above example, can we say that the highest priority operation will be close to the primitives?
+  *From the above example*
+  - Will a low priority operation include the next high priority operation?
+    - Yes, since the high priority operation will resolve itself before the one with lower priority
+
+  - Does that mean the lowest priority operation will be the entrypoint?
+    - Yes
+      
+  - What about the highest priority operations?
+    - They will be the termination point
+
+  - Can we say that the highest priority operation will be close to the primitives?
+    - Yes, because It will resolve itself first
+    
 
 - What operations does a List Processor support?
   - First -> Returns the first elements
