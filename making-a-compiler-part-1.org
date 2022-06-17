@@ -17,11 +17,11 @@
 - What does it look like?
   - For fullname syntax
   #+BEGIN_SRC bnf
-  <fullname> = <firstname> <lastname>
-  <firstname> = <string>
-  <lastname> = <string>
-  <string> = <character>:+
-  <character> = [a-zA-Z]
+  fullname -> firstname lastname
+  firstname -> string
+  lastname -> string
+  string -> character:+
+  character -> [a-zA-Z]
   #+END_SRC
 
 - What is EBNF notation for lambda calculus?
@@ -79,7 +79,7 @@
   - A number is a digit, any from [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
   #+BEGIN_SRC bnf :name hello
-  <digit> = [0-9]
+  digit -> [0-9]
   #+END_SRC
 
  
@@ -91,60 +91,60 @@
 
   digits could be a single digit or a digit followed by digits
   #+BEGIN_SRC bnf :tangle yes
-  <digits> = <digit> | <digit> <digits>
+  digits -> digit | digit digits
   #+END_SRC
 
 - What about Real numbers?
 
   #+BEGIN_SRC bnf
-  <real> = <digits> "." <digits>
+  real -> digits "." digits
   #+END_SRC
   Since reals are a sequence of numbers followed a =.= and then numbers again
 
 - What about booleans?
 
   #+BEGIN_SRC bnf
-  <boolean> = "true" | "false"
+  boolean = "true" | "false"
   #+END_SRC
   
 - What about strings?
   - Strings are a sequence of characters between ="=
   #+BEGIN_SRC bnf
-  <string> = '"' <characters> '"'
+  string -> "\"" characters "\""
   #+END_SRC
 
   - Characters could be 1 character or a character followed by characters
   #+BEGIN_SRC bnf
-  <characters> = <character> | <character> <characters>
+  characters -> character | character characters
   #+END_SRC
 
   - A character could be anything =a to z= or =A to Z=
   #+BEGIN_SRC bnf
-  <character> = [a-zA-Z]
+  character -> [a-zA-Z]
   #+END_SRC
   
 - How about representing null ie empty values?
 
   #+BEGIN_SRC bnf
-  <null> = "null" 
+  null -> "null" 
   #+END_SRC
   
 - What about arrays, ie a collection of values?
 
   - Array elements are enclosed within =[= and =]= 
   #+BEGIN_SRC bnf
-  <array> = "[" <array_elements> "]" 
+  array -> "[" array_elements "]" 
   #+END_SRC
 
   - Array elements could be 1 element or a multiple elements seperated by =,=
   #+BEGIN_SRC bnf
-  <array_elements> = <array_element> | <array_element> "," <array_elements>
+  array_elements -> array_element | array_element "," array_elements
   #+END_SRC
 
   - An array element is a literal
   #+BEGIN_SRC bnf
-  <array_element> = <literal>
-  <literal> = <number> | <string> | <boolean> | <null> | <array>
+  array_element -> literal
+  literal -> number | string | boolean | null | array
   #+END_SRC
 
   
