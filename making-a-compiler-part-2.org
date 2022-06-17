@@ -1,0 +1,35 @@
+#+title: Making a compiler - Part 2 - Grammer & Primitive Operations
+#+date: 2022-06-17 
+#+draft: false
+#+filetags: solution
+
+- What are primitive operations?
+  - The most basic building blocks which can be composed to make bigger building blocks
+    
+- What primitives are we building for our language?
+  - Calculator and a List Processor
+    
+- What operations does a Calculator support?
+  - Additives -> + | -
+  - Multiplicatives -> * | /
+  - Exponents -> ^
+  - Comparatives -> > | < | >= | <= | == | ! =
+  - Booleans -> and | or | not
+  
+- What operations does a List Processor support?
+  - First -> Returns the first elements
+  - Rest -> Returns everything but first element
+  - Cons -> Adds an element to the head of the list
+
+    
+- Could you give an example?
+  - First . [a, b,...] => a
+  - Rest -> [a, b,...] => [b,...]
+  - Cons z [a, b,...] => [z, a, b,...]
+    
+- Whats the First of an empty list?
+  - We don't ask that
+
+- Whats the Rest of an empty list?
+  - We don't ask that as well
+
