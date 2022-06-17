@@ -16,11 +16,83 @@
   - Comparatives -> > | < | >= | <= | == | ! =
   - Booleans -> and | or | not
   
+- Does the order matter in =a + b + c=?
+  - No, =(a + b) + c= is equal to =a + (b + c)=
+
+- How about =a + b * c=?
+  - Yes, =a + (b * c)= is the correct order
+    
+- What is the operator precedence in Math?
+  - Groupings Exponents then Multiplicatives then Additives
+    
+- Lets tabulate it for our language
+  - The precedence is from top to bottom.
+    
+    | Groupings       |
+    | Exponents       |
+    | Multiplicatives |
+    | Additives       |
+    | Comparatives    |
+    | Booleans        |
+
+- How can we express operator precedence for our language?
+  - EBNF notation
+    
+- For brevity, assuming our language only supports Multiplicatives and Additives, how can we process all the multiplicatives before the additives?
+
+  *ASSUMPTION BEGIN*
+
+  - By specifying the exact same
+  #+BEGIN_SRC bnf
+  <additive> = <multiplicative> <additive_operator> <multiplicative>
+  <additive_operator> = "+" | "-"
+  #+END_SRC
+  Additive will pass the execution to Multiplicatives. When Multiplicatives are done executing and return the result, additives will execute itself
+
+  - How do we solve multiplicatives?
+    - Solving multiplicatives should be easy since the operands will be primitives(For the assumed case ie language only supporting additives & multiplicatives)
+
+    #+BEGIN_SRC bnf
+    <multiplicative> = <number> <multiplicative_operator> <number>
+    <multiplicative_operator> => "*" | "/"
+    #+END_SRC
+    
+    - How will this grammar generate the tree for the expression =1 * 4 + 7 / 9=
+
+	|----------------+----------------|
+	| 1 * 4          | 7 / 9          |
+	| Multiplicative | Multiplicative |
+	|----------------+----------------|
+
+	|-------------------|
+	| (1 * 4) + (7 / 9) |
+	| Additive          |
+	|-------------------|
+    
+    - How about =1 * 4 + 7=?
+
+	|----------------+---|
+	| 1 * 4          | 7 |
+	| Multiplicative | ? |
+	|----------------+---|
+      - We hit a roadblock
+
+    - How do we resolve this?
+      - By expressing single primitive in grammar
+      
+  - How can we do that?
+    - By redefining the operations to support single argument
+    #+BEGIN_SRC bnf
+    <additive> = <multiplicative> <additive_operator> <multiplicative> | <multiplicative>
+    <multiplicative> = <number> <multiplicative_operator> <number> | <number>
+    #+END_SRC
+  
+- From the above example, can we say that the highest priority operation will be close to the primitives?
+
 - What operations does a List Processor support?
   - First -> Returns the first elements
   - Rest -> Returns everything but first element
   - Cons -> Adds an element to the head of the list
-
     
 - Could you give an example?
   - First . [a, b,...] => a
