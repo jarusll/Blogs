@@ -1,7 +1,9 @@
-#+title: Making a compiler - Part 2 - Grammer & Primitive Operations
+#+title: Making a compiler - Part 2 - Grammer - Primitive Operations
 #+date: 2022-06-17 
 #+draft: false
-#+filetags: solution
+#+filetags: craft
+
+*NOTE: [[https://omrelli.ug/nearley-playground/][Nearley Playground]]*
 
 - What are primitive operations?
   - The most basic building blocks which can be composed to make bigger building blocks

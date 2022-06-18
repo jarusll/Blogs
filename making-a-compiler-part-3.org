@@ -1,0 +1,83 @@
+#+title: Making a compiler - Part 3 - Grammer - Abstractions
+#+date: 2022-06-18 
+#+draft: false
+#+filetags: craft
+
+*NOTE: [[https://omrelli.ug/nearley-playground/][Nearley Playground]]*
+
+- What are abstractions?
+  - Composition of primitive operations to make complex operations
+
+- Could you give an example?
+  - Using the multiplicative operation we can make a =SQR= operation
+    #+BEGIN_SRC 
+    lambda X . X * X
+    #+END_SRC
+
+- What is our purpose?
+  - To define the grammar for abstractions in our language
+    
+- Whats the grammar for abstraction in lambda calculus?
+  #+BEGIN_SRC bnf
+  <λexp> = <var>
+    | λ<var> . <λexp>
+    | ( <λexp> <λexp> )
+  #+END_SRC
+
+  We could abstract over primitive operations. For eg a =SUM= abstraction could be written as
+  #+BEGIN_SRC 
+  lamdba X . lambda Y . X + Y
+  #+END_SRC
+
+- Why are there 2 lambdas?
+  - An abstraction only takes 1 argument
+
+- So how do you make a multi argument abstraction?
+  - Currying, thanks Haskell Curry.
+
+- What is currying?
+  - Breaking down of a multi argument abstraction into a series of abstractions which take 1 argument. Just like the =SUM= function above
+    
+- Since a curried function takes 1 argument at a time, what happens when incomplete arguments are supplied?
+  - The =SUM= function takes 2 arguments. Applying 1 argument gives
+
+    =lamdba X . lambda Y . X + Y . 7= -> =lambda Y . 7 + Y=
+
+    This is called partial application.
+
+- Why currying?
+  -[[https://blog.logrocket.com/understanding-javascript-currying/][Here's a good source]] 
+
+- How can we define the grammer?
+  - An abstraction could be
+  |--------------------------+-----------+-----------+--------------------------------------|
+  | Type of Abstraction      | #Argument | Name      | Body                                 |
+  |--------------------------+-----------+-----------+--------------------------------------|
+  | Over a Constant          |         n | PI        | =lambda . 3.14= or =lambda X . 3.14= |
+  | Over an Expression       |         1 | INCREMENT | =lambda X . X + 1=                   |
+  | Over another Abstraction |        1+ | SUM       | =lamdba X . lambda Y . X + Y=        |
+  |--------------------------+-----------+-----------+--------------------------------------|
+    
+  Constant abstractions will always give same value irrespective of argument/s
+      
+  #+BEGIN_SRC 
+  abstraction -> "lambda" _ "." _ constant
+	      |  "lambda" _ variable _ "." _ constant
+              |  "lambda" _ variable _ "." _ variable_expression
+              |  "lambda" _ variable _ "." _ abstraction
+	      |  "lambda" _ variable _ "." _ application
+  #+END_SRC
+
+  #+BEGIN_SRC 
+  application -> abstraction _ "." _ expression
+  #+END_SRC
+  Example -> =ADDONE= -> =lambda X . lambda Y . X + Y . 1= -> =lambda Y . 1 + Y . 1=
+
+  #+BEGIN_SRC 
+  expression -> literal | abstraction | application
+  constant -> literal
+  variable_expression -> variable operation variable_expression | literal operation variable_expression | variable
+  variable -> [A-Z]:+
+  operation -> unary | binary
+  #+END_SRC
+  

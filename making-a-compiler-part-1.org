@@ -1,7 +1,7 @@
-#+title: Making a compiler - Part 1 - Grammer & Primitive Data
+#+title: Making a compiler - Part 1 - Grammer - Primitive Data
 #+date: 2022-06-15 
 #+draft: false
-#+filetags: solution
+#+filetags: craft
 
 *NOTE: [[https://omrelli.ug/nearley-playground/][Nearley Playground]]*
 
