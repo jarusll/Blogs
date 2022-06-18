@@ -1,0 +1,45 @@
+#+title: Longest Palindrome
+#+date: 2022-06-18
+#+draft: true
+#+filetags: solution
+
+- What is a palindrome?
+  - A string which is the same reversed
+
+    #+BEGIN_EXAMPLE
+    aba
+    1234321
+    #+END_EXAMPLE
+    
+- Is the first half a mirror image of second half?
+  - Yes
+
+- What is our purpose?
+  - To find the longest palindrome
+    
+- Is a single chracter palindrome?
+  - Yes 
+
+- What is a trivial algorithm to find the longest palindrome?
+  - Traverse the string
+  - Expand from middle and check for palindrome
+  - Note down the palindrome size
+    
+- For the assumed string =...abacdcaba...= what are the palindrome sizes?
+  |-----------------+-----+---+---+---+---+---+---+---+---+---+-----|
+  | String          | ... | a | b | a | c | d | c | a | b | a | ... |
+  | Palindrome size | ... | 1 | 3 | 1 | 1 | 9 |   |   |   |   |     |
+  |-----------------+-----+---+---+---+---+---+---+---+---+---+-----|
+  At this stage, these are the palindrome sizes of a slice in the string
+  
+- Can we use the fact that a palindrome is a mirror image?
+  - Yes, which means the palindrome sizes of the right half are atleast the size on the left
+  |-----------------+-----+---+---+---+---+---+------+------+------+------+-----|
+  | String          | ... | a | b | a | c | d | c    | a    | b    | a    | ... |
+  | Palindrome size | ... | 1 | 3 | 1 | 1 | 9 | >= 1 | >= 1 | >= 3 | >= 1 | ... |
+  |-----------------+-----+---+---+---+---+---+------+------+------+------+-----|
+  
+- Why are they atleast the size on the left?
+  - Because there is a possibility that this palindrome might be a part of a longer palindrome
+
+- Assuming that this slice of palindrome is a part of a longer palindrome, where should we look next for a palindrome?
