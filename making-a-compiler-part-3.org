@@ -46,7 +46,7 @@
     This is called partial application.
 
 - Why currying?
-  -[[https://blog.logrocket.com/understanding-javascript-currying/][Here's a good source]] 
+  - [[https://blog.logrocket.com/understanding-javascript-currying/][Here's a good source]]
 
 - How can we define the grammer?
   - An abstraction could be
