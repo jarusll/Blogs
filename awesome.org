@@ -1,0 +1,8 @@
+#+title: Awesome
+#+date: 2022-06-18
+#+draft: false
+#+filetags: helpful
+#+hidden: true
+
+* Computers
+* Games
