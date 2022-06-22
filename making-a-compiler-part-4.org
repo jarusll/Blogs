@@ -1,0 +1,21 @@
+#+title: Making a compiler - Part 4 - Grammer - Application
+#+date: 2022-06-20 
+#+draft: true
+#+filetags: craft
+
+- What is an application?
+  - Invocation of a function
+
+- How do you invoke it
+
+- What can I pass in argument?
+  - Nothing
+  - Literal
+  - A function
+
+- What is a function that takes another function as an argument?
+  - Higher order function
+
+- Could you give an example?
+  - A function which applies a function to every member of a list
+    =MAP . SQR . [1, 2, 3]= -> =[1, 4, 9]=
