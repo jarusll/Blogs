@@ -30,3 +30,5 @@ Code discoverability is how easy it is for a developer to find existing function
 - Intuitive interfaces
 	For functional programming It would be sensible function signatures
 	For OO It would be Interfaces
+
+Here's a [thread](https://news.ycombinator.com/item?id=32365660) where I asked developers how they go about getting comfortable with a new codebase.
