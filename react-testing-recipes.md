@@ -166,6 +166,10 @@ Add it as a script to `package.json`
       ...
     }))
     ```
+
+### You want to simulate browser events - Click/Change/...
+- https://www.pluralsight.com/guides/simulate-browser-events-react-react-testing-library
+
 ### You are facing `SOME_ENV_VAR` not defined
 You can define global variables by
 *jest.config.js*
