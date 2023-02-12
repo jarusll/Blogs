@@ -33,7 +33,6 @@ Most of the trackballers in the community use acceleration as well.
 
 ### Whats the curve?
 ![Acceleration curve](/images/Curve.png)
-I scavenged this setup from a [7idus](https://www.youtube.com/@7idus67).
 
 ## What is my conclusion for now?
 For work, its the best for me as a programmer. Its good for productivity and certain types of games where you don't need reflexes. I had alot of fun on this playing Civilization.
