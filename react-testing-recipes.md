@@ -145,3 +145,24 @@ Add it as a script to `package.json`
   - [React Testing Tutorial](https://www.youtube.com/watch?v=T2sv8jXoP4s&list=PLC3y8-rFHvwirqe1KHFCHJ0RqNuN61SJd)
 - [The Net Ninja](https://www.youtube.com/@NetNinja) & [Laith Academy](https://www.youtube.com/channel/UCyLNhHSiEVkVwPSFKxJAfSA)
   - [React Testing Library Tutorial](https://www.youtube.com/watch?v=7dTTFW7yACQ&list=PL4cUxeGkcC9gm4_-5UsNmLqMosM-dzuvQ)
+
+
+## While testing
+### You want to test Apollo graphql
+- Here's how to set it up
+  - https://www.apollographql.com/docs/react/development-testing/testing/
+- Here's a really neat way to set it up along with preliminary debugging
+  - https://www.swarmia.com/blog/debugging-apollo-graphql-mockedprovider/
+- Is there any way to make this easier?
+  - I pass my `mocks` as second argument to the `render` function
+  - I have a utility to create the mock request-response entity
+  - Here's how it looks like
+    ```javascript
+    const {...} = render(<Component {...props}/>, MakeResponses({
+      'query-name': {
+        params: // query params go here,
+        data: // response goes here
+      },
+      ...
+    }))
+    ```
