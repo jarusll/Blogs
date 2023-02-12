@@ -1,5 +1,5 @@
 ---
-title : React Testing Setup
+title : React Testing Recipes
 author : ["Suraj Yadav"]
 date : 2023-02-11
 tags : ["recipe"]
@@ -166,3 +166,19 @@ Add it as a script to `package.json`
       ...
     }))
     ```
+### You are facing `SOME_ENV_VAR` not defined
+You can define global variables by
+*jest.config.js*
+```javascript
+module.exports = {
+  ...,
+  globals: {
+    ENV_VAR_NAME: VALUE
+  },
+  ...
+}
+```
+
+#### Further Reading
+- Globals Object
+  - https://jestjs.io/docs/configuration#globals-object
