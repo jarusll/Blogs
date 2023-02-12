@@ -45,6 +45,7 @@ module.exports = require('babel-jest').default.createTransformer(babelOptions);
   - https://babeljs.io/docs/en/plugins
 
 ### You want coverage reports
+*jest.config.js*
 ```javascript
 module.exports = {
 ...
@@ -59,6 +60,7 @@ module.exports = {
   - https://jestjs.io/docs/configuration#reporters-arraymodulename--modulename-options
 
 ### You want to enable/add path alias support
+*jest.config.js*
 ```javascript
 const { pathsToModuleNameMapper } = require('ts-jest');
 const { compilerOptions } = require('./jsconfig.json'); // or tsconfig.json
@@ -80,6 +82,8 @@ module.exports = {
 ### Your project uses other file extensions ie svg/gql/...
 You need transformers
 Here's how you would add transformers for `.gql` & `.svg` files. You will need to add them as dev dependencies.
+
+*jest.config.js*
 ```javascript
 module.exports = {
 ...
@@ -98,6 +102,7 @@ module.exports = {
 - Why you need this?
   - When you have Provider wrappers in your app ie `SnackbarProvider`, `ThemeProviders`, you might need to setup a custom render function which automatically wraps your Component to be tested with the necessary wrappers.
 
+*jest.setup.js*
 ```javascript
 import '@testing-library/jest-dom';
 import '@testing-library/jest-dom/extend-expect'; // needed for assertions
@@ -123,6 +128,7 @@ npx jest
 ```
 
 Add it as a script to `package.json`
+*package.json*
 ```json
 {
   "scripts": {
