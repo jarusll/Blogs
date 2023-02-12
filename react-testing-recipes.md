@@ -1,5 +1,5 @@
 ---
-title : React Testing Recipes
+title : React Testing Setup
 author : ["Suraj Yadav"]
 date : 2023-02-11
 tags : ["recipe"]
