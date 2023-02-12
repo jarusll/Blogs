@@ -1,5 +1,4 @@
 ---
-toc: true
 title : React Testing Recipes
 author : ["Suraj Yadav"]
 date : 2023-02-11
