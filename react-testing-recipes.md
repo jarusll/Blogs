@@ -186,3 +186,37 @@ module.exports = {
 #### Further Reading
 - Globals Object
   - https://jestjs.io/docs/configuration#globals-object
+
+## You want to mock
+
+### You want to mock a npm dependency
+If the dependency is a commonjs module, you can do
+```javascript
+jest.mock('dependency', () => ({
+  default: jest.fn(),
+}));
+```
+Assuming the dependency is exported as default
+
+- For named exports, you can do
+
+```javascript
+jest.mock('dependency', () => ({
+  namedExportedFunction: jest.fn(),
+}));
+```
+
+- If the dependency is es6 module, you can do
+
+```javascript
+jest.mock('dependency', () => ({
+  __esModule: true,
+  default: jest.fn(),
+  namedExportedFunction: jest.fn(),
+}));
+```
+
+#### Further Reading
+- Jest Mocks
+  - https://jestjs.io/docs/mock-functions
+  - https://medium.com/@rickhanlonii/understanding-jest-mocks-f0046c68e53c
