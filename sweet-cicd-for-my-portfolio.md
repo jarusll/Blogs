@@ -3,10 +3,12 @@ title: Sweet CICD for my Portfolio
 date: 2022-03-23
 ---
 
+Edit: 19/02/2023
+Overengineered af, but was fun. 10/10 Would do it again.
 # Sweet CICD for my Portfolio
 ## What my current setup is?
 My portfolio is hosted on Github pages. Github pages has support for selecting the directory to host.
-The options are "root" or "/docs" directories. 
+The options are "root" or "/docs" directories.
 
 I build my portfolio locally in "/docs" directory and push it. I chose "/docs" to host in Github pages on master branch.
 
@@ -41,18 +43,18 @@ name: build & push to gh-pages branch
 I want the workflow to trigger when I push any change on master branch.
 
 ```github:on
-on: 
+on:
   push:
     branches:
-      - master 
+      - master
 ```
 
 The steps to build is pretty simple, I want to run the workflow on ubuntu-linux.
 
-The Github action `actions/setup-node` is pretty self explanatory. 
+The Github action `actions/setup-node` is pretty self explanatory.
 The Node version on my local is 14.18.1, so I decided to go with 14.x.
 
-The Github action [`actions/checkout`](https://stackoverflow.com/questions/67131269/github-jobs-what-is-use-actions-checkout) checks out your repo. 
+The Github action [`actions/checkout`](https://stackoverflow.com/questions/67131269/github-jobs-what-is-use-actions-checkout) checks out your repo.
 
 After that its just installing the dependencies by `yarn install` and then building by `yarn build`
 ```github:jobs
@@ -66,7 +68,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    
+
     - name: yarn install
       run: |
         yarn install
@@ -103,10 +105,10 @@ I have my `posts` as a git submodule in my portfolio repo. When `actions/checkou
 ```github:cicd.yml
 name: build page
 
-on: 
+on:
   push:
-    branches:    
-      - master 
+    branches:
+      - master
 
 jobs:
   build:
@@ -118,7 +120,7 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.x
-    
+
     - name: yarn install
       run: |
         yarn install
