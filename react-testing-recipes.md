@@ -220,3 +220,59 @@ jest.mock('dependency', () => ({
 - Jest Mocks
   - https://jestjs.io/docs/mock-functions
   - https://medium.com/@rickhanlonii/understanding-jest-mocks-f0046c68e53c
+
+### You want to mock a Component
+For example,
+You want to mock Route to bypass authentication.
+Assuming you have the following folder structure and Route is the default export
+```
+...
+|-Route
+  |- index.js
+```
+You can add the Route mock at `Route/__mocks__/index.js`
+
+*Route/__mocks__/index.js*
+```javascript
+function MockRoute({children}) {
+  return (
+    <>{children}</>
+  );
+};
+```
+
+Route can be automatically mocked by placing the following snippet in your test file
+```javascript
+jest.mock('path/to/Route');
+```
+
+### You want to mock a Context
+AuthProvider has the following state
+```javascript
+const AuthContext = React.createContext({
+  user: null,
+  login: () => {},
+  logout: () => {},
+});
+```
+
+You can mock AuthProvider by
+*AuthProvider/__mocks__/index.js*
+```javascript
+const AuthContext = React.createContext();
+const AuthState = {
+  user: null,
+  login: jest.fn(),
+  logout: jest.fn(),
+};
+
+export default function AuthProvider(){
+  return (<AuthContext.Provider value={{
+    user: null,
+    login: () => {},
+    logout: () => {},
+  }}>
+    {children}
+  </AuthContext.Provider>);
+}
+```
