@@ -8,7 +8,7 @@ date: 2022-03-11
 - For those who don't know what CRC is, it's a tool that helps design objects.
 - A CRC card consists of Class name at the top, responsibilities on the left side & collaborators on the right.
 - Since a card models only one object, it enables rapid prototyping. It is feasible to go through many iterations before settling on an implementation.
-- ![A sample CRC card](./images/crc-example.gif)
+- ![A sample CRC card](/crc-example.gif)
 
 
 ## Smalltalk Documentation talks to you
@@ -51,7 +51,7 @@ I have adopted this style of documentation for just about everything.
 ## Inbuilt support for documentation
 The Smalltalk IDE's are one of the most mature IDEs I have ever used. They have inbuilt support for documentation along with the class. Although this might be more of an IDE feature, it has been since the beginning(probably).
 
-![Documentation in Pharo](./images/documentation-in-pharo.png)
+![Documentation in Pharo](/documentation-in-pharo.png)
 
 [^1]: http://www.agilemodeling.com/artifacts/crcModel.htm
 [^2]: https://pharo.org
