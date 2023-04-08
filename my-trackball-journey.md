@@ -22,17 +22,17 @@ Finger trackballs look better for precision relative to thumb trackballs but tha
 I use my trackball for both gaming and work.
 When I am gaming, the trackball stays on the usual position ie right side of the keyboard.
 When I am working, it stays below the keyboard because its better for me to move from home row toward myself.
-![Trackball placement](./Trackball_placement.jpg)
+![Trackball placement](/images/Trackball_placement.jpg)
 
 I have a 45 degree tent for the trackball so my palm is at around 90 degrees from the tray.
-![Trackball tent](./Tent.jpg)
+![Trackball tent](/images/Tent.jpg)
 
 ### Have I been using acceleration?
 Yes, I use Jump aceleration. No I do not know the difference between the types of acceleration but Jump feels the best for me. I use rawaccel for acceleration setttings. I haven't setup acceleration on linux yet.
 Most of the trackballers in the community use acceleration as well.
 
 ### Whats the curve?
-![Acceleration curve](./Curve.png)
+![Acceleration curve](/images/Curve.png)
 
 ## What is my conclusion for now?
 For work, its the best for me as a programmer. Its good for productivity and certain types of games where you don't need reflexes. I had alot of fun on this playing Civilization.
