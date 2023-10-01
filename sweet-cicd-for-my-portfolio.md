@@ -17,7 +17,7 @@ This setup is a bit tedious. There are 2 problems.
 - I have to track the build in git
 
 ## What I want?
-I want to solve both problems. I do not want to track the build and I want it to be in seperate repo.
+I want to solve both problems. I do not want to track the build and I want it to be in separate repo.
 
 ## My weapon of choice - Github Actions
 It has good documentation and I got comfortable with it very fast. There are 4 entities in a GA script.

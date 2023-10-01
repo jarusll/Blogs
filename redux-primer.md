@@ -1,6 +1,6 @@
 ---
 title: Redux Primer
-date: 2022-06-10 
+date: 2022-06-10
 ---
 
 # Run this notebook
@@ -32,7 +32,7 @@ date: 2022-06-10
 	-   The `payload` is the data associated with the action event
 
 -	Eg
-	
+
 	```json
 	{
 		"type": "ADD_POST",
@@ -74,12 +74,12 @@ date: 2022-06-10
 	addPost({tags: ["primer"], text: "What do you start with?..."})
 	```
 
-	{ 
+	{
 		type: 'ADD_POST',
-		payload: { 
-			tags: [ 'primer' ], 
-			text: 'What do you start with?...' 
-		} 
+		payload: {
+			tags: [ 'primer' ],
+			text: 'What do you start with?...'
+		}
 	}
 
 - Whats the next step?
@@ -169,7 +169,7 @@ date: 2022-06-10
 
     11
 
-**From this point on, `reducers` and `slices` may be used interchangably**
+**From this point on, `reducers` and `slices` may be used interchangeably**
 
 - How to decide what reducers to make?
 

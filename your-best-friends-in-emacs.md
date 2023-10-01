@@ -11,9 +11,9 @@ date: 2022-03-14
 ## Describe Mode[^emacs-modes] `C-h m`
 Describe mode gives you a list of all enabled Minor modes, functions in the major mode & all their key binds.
 
-I skim through `describe-mode` the first time I am using a mode. 
-The functions are generally named as `namespace-like`-`action-like`-`something-else`. 
-I remember the pattern so I can type out these functions with some autocompletion engine[^completion-engine]. 
+I skim through `describe-mode` the first time I am using a mode.
+The functions are generally named as `namespace-like`-`action-like`-`something-else`.
+I remember the pattern so I can type out these functions with some autocompletion engine[^completion-engine].
 I lookup the keybind for that action as well, after using it for a couple of times it becomes second nature.
 
 ## Describe Function `C-h f`
@@ -53,7 +53,7 @@ I like having this so I can learn emacs. Totally optional but a nice to have.
 ## Why best friends?
 I believe that one of the biggest difference between a professional and a beginner is that the professional has gotten comfortable in an environment which is pretty hostile to them.
 
-If you foster exploration[^xah-emacs-guide] for yourself, you can get comfortable really fast. 
+If you foster exploration[^xah-emacs-guide] for yourself, you can get comfortable really fast.
 
 Godspeed
 

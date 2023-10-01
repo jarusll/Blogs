@@ -28,7 +28,7 @@ I have a 45 degree tent for the trackball so my palm is at around 90 degrees fro
 ![Trackball tent](/Tent.jpg)
 
 ### Have I been using acceleration?
-Yes, I use Jump aceleration. No I do not know the difference between the types of acceleration but Jump feels the best for me. I use rawaccel for acceleration setttings. I haven't setup acceleration on linux yet.
+Yes, I use Jump acceleration. No I do not know the difference between the types of acceleration but Jump feels the best for me. I use rawaccel for acceleration settings. I haven't setup acceleration on linux yet.
 Most of the trackballers in the community use acceleration as well.
 
 ### Whats the curve?

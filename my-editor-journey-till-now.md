@@ -5,9 +5,9 @@ date: 2022-03-11
 # My Editor Journey Till Now
 
 ## What did I start with?
-**2018** 
+**2018**
 
-My first editor was Emacs[^emacs]. Why did I choose emacs? I couldn't figure out how to exit Vim[^vim]. 
+My first editor was Emacs[^emacs]. Why did I choose emacs? I couldn't figure out how to exit Vim[^vim].
 
 I got really into programming with Scheme[^scheme]. And I liked it so much I decided to choose the editor with its roots in it.
 
@@ -26,7 +26,7 @@ I use i3wm which has vim-like keybinds. I use vim keybinds in online IDEs for pr
 ## Why am I switching again?
 **2022**
 
-I have recently been tinkering with smalltalk. The Pharo(or any smalltalk) IDE has been one of the best IDEs I have ever used. I know when I miss vim because I feel slow. But I never felt slow in Pharo's IDE. Its because you are able to reach just about anywhere within few clicks. I realized I was getting more done and was managing very less code. It made me think about extensibility. 
+I have recently been tinkering with smalltalk. The Pharo(or any smalltalk) IDE has been one of the best IDEs I have ever used. I know when I miss vim because I feel slow. But I never felt slow in Pharo's IDE. Its because you are able to reach just about anywhere within few clicks. I realized I was getting more done and was managing very less code. It made me think about extensibility.
 
 And this made me change my mind. Its about time I did emacs properly.
 
