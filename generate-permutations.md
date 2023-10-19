@@ -1,10 +1,10 @@
-+++
+---
 title = "Generate Permutations"
 author = ["Suraj Yadav"]
 date = 2022-05-28
 tags = ["solution"]
 draft = false
-+++
+---
 
 ## What is permutation? {#what-is-permutation}
 

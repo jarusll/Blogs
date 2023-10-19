@@ -1,10 +1,10 @@
-+++
+---
 title = "My Trackball Journey"
 author = ["Suraj Yadav"]
 date = 2023-01-21
 tags = ["trackball"]
 draft = false
-+++
+---
 
 ## How?
 The day I started working out my arms were fucked for some days and I thought it was ergonomics.

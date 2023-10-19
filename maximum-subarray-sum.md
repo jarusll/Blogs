@@ -1,10 +1,10 @@
-+++
+---
 title = "Maximum subarray sum"
 author = ["Suraj Yadav"]
 date = 2022-05-31
 tags = ["solution"]
 draft = false
-+++
+---
 
 ## Maximum Subarray Sum {#maximum-subarray-sum}
 

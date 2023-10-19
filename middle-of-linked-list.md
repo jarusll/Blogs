@@ -1,10 +1,10 @@
-+++
+---
 title = "Middle of Linked List"
 author = ["Suraj Yadav"]
 date = 2022-05-29
 tags = ["solution"]
 draft = false
-+++
+---
 
 ## 2 Pointers {#2-pointers}
 
