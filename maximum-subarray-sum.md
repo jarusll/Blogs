@@ -1,9 +1,10 @@
 ---
-title = "Maximum subarray sum"
-author = ["Suraj Yadav"]
-date = 2022-05-31
-tags = ["solution"]
-draft = false
+title : "Maximum subarray sum"
+author : ["Suraj Yadav"]
+date : 2022-05-31
+tags : ["solution"]
+draft : false
+layout: ../../layouts/RequestResponse.astro
 ---
 
 ## Maximum Subarray Sum {#maximum-subarray-sum}

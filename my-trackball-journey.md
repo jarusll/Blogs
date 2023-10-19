@@ -1,9 +1,10 @@
 ---
-title = "My Trackball Journey"
-author = ["Suraj Yadav"]
-date = 2023-01-21
-tags = ["trackball"]
-draft = false
+title : "My Trackball Journey"
+author : ["Suraj Yadav"]
+date : 2023-01-21
+tags : ["trackball"]
+draft : false
+layout: ../../layouts/RequestResponse.astro
 ---
 
 ## How?

@@ -1,9 +1,10 @@
 ---
-title : React Testing Recipes
-author : ["Suraj Yadav"]
-date : 2023-02-11
-tags : ["recipe"]
-draft : false
+title: React Testing Recipes
+author: ["Suraj Yadav"]
+date: 2023-02-11
+tags: ["recipe"]
+draft: false
+layout: ../../layouts/RequestResponse.astro
 ---
 
 ## You want to setup jest

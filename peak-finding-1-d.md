@@ -1,6 +1,7 @@
 ---
 title: 1D Peak finding
-date: 2022-06-10 
+date: 2022-06-10
+layout: ../../layouts/RequestResponse.astro
 ---
 
 # Run this notebook
@@ -62,7 +63,7 @@ date: 2022-06-10
 peak([...])
 	[] => None -- Base case 0
 	[x] => x -- Base case 1
-	[a, b, ...] and a >= b => a -- Base case start 
+	[a, b, ...] and a >= b => a -- Base case start
 	[..., y, z] and y <= z => z -- Base case end
 	[..., k, l, m, ...] and k <= l and l >= m => l -- Base case mid
 	[..., k, l, m, ...] and k >= l => peak([..., k]) -- case left
