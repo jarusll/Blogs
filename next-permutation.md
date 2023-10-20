@@ -1,9 +1,10 @@
 ---
-title = "Next permutation"
-author = ["Suraj Yadav"]
-date = 2022-05-30
-tags = ["solution"]
-draft = false
+title:  "Next permutation"
+author: ["Suraj Yadav"]
+date: 2022-05-30
+tags: ["solution"]
+draft: false
+layout: ../../layouts/RequestResponse.astro
 ---
 
 ## Next Permutation {#next-permutation}

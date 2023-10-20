@@ -1,6 +1,7 @@
 ---
 title: Sweet CICD for my Portfolio
 date: 2022-03-23
+layout: ../../layouts/RequestResponse.astro
 ---
 
 Edit: 19/02/2023

@@ -1,6 +1,7 @@
 ---
 title: Redux Primer
 date: 2022-06-10
+layout: ../../layouts/RequestResponse.astro
 ---
 
 # Run this notebook

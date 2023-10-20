@@ -1,6 +1,7 @@
 ---
 title: What motivates me (I think)
 date: 2022-03-27
+layout: ../../layouts/RequestResponse.astro
 ---
 
 # What motivates me (I think)

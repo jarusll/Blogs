@@ -1,6 +1,7 @@
 ---
 title: Why I made a public diary
 date: 2022-03-24
+layout: ../../layouts/RequestResponse.astro
 ---
 
 # Why I made a public diary

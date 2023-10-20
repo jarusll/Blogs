@@ -1,6 +1,7 @@
 ---
 title: My Editor Journey Till Now
 date: 2022-03-11
+layout: ../../layouts/RequestResponse.astro
 ---
 # My Editor Journey Till Now
 

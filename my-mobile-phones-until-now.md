@@ -1,6 +1,7 @@
 ---
-title: My mobile/tablets until now 
+title: My mobile/tablets until now
 date: 2022-04-16
+layout: ../../layouts/RequestResponse.astro
 ---
 
 # My mobile phones until now  #
@@ -20,10 +21,10 @@ Some of the best apps I can recall for this phone are Facebook, Ebuddy, Opera Mi
 
 ## Samsung Corby Pro B5310 ##
   * 7th grade - 9th grade
-  
+
 ![Samsung Corby Pro B5310](https://ms2.tudocdn.net/203707?w=500&h=419)
 *Credit - https://www.mobilescout.com/tech/news/n80650/samsung-corbypro-with-slider-qwerty-keypad.html*
-  
+
 The first touch & multitasking phone for me. I discovered that feature after a year. I din't even know Java phones had multitasking. And ofcourse the slider keyboard.
 
 Having this thing in my pocket I no longer felt like a boy, I was a grown up man.
@@ -34,19 +35,19 @@ Having this thing in my pocket I no longer felt like a boy, I was a grown up man
 ![Nokia N91](https://fdn.gsmarena.com/imgroot/news/19/12/flashback-nokia-n91/-727/gsmarena_002.jpg)
 *Credit - https://www.gsmarena.com/flashbacknokian91-news-40659.php*
 
-My first Symbian phone. This was during when N95 was the coolest phone around. But I couldn't get one so I got an N91. 
+My first Symbian phone. This was during when N95 was the coolest phone around. But I couldn't get one so I got an N91.
 
 This thing was a chonky boi. I learnt alot with this phone. I tried jailbreaking & emulation. I used to emulate sega genesis & doom on this. And if you rotated & mapped the music buttons It actually felt like a handheld, just like N95.
-  
+
 This would be end of T9 layout for me.
-  
+
 ## Samsung Galaxy Y GT-S5360 ##
   * 10th Grade
-  
+
 ![Galaxy Y](https://drop.ndtv.com/TECH/product_database/images/530201330723PM_635_samsung_galaxy_y.png?downsize=*:420&output-quality=80)
 *Credit - https://gadgets360.com/samsung-galaxy-y-556*
 
-My first Android phone. I explored rooting & custom roms with it. 
+My first Android phone. I explored rooting & custom roms with it.
 
 Installing Tablet roms on the small screen was fun.
 
@@ -67,7 +68,7 @@ I read alot.
 
 This was during the time When I got my first PC & I lost interest with mobile tinkering.
 
-I still tinkered with it with Xposed modules. This was the peak of android mods. I maximised my battery life with Greenify, Amplify. Customized my ui with XBlast, hide my details with XPrivacy. 
+I still tinkered with it with Xposed modules. This was the peak of android mods. I maximised my battery life with Greenify, Amplify. Customized my ui with XBlast, hide my details with XPrivacy.
 
 ## Vivo Y20 ##
   * 2nd year Uni - Current
@@ -75,6 +76,6 @@ I still tinkered with it with Xposed modules. This was the peak of android mods.
 ![Vivo Y20](https://fdn2.gsmarena.com/vv/pics/vivo/vivo-y20-2021-1.jpg)
 *Credit - https://www.gsmarena.com/vivoy202021-pictures-10658.php*
 
-I do not mess around with this phone. Its my daily driver & I want stability. I do not care about launchers or battery life or performance because it has it all. I want things to just work and it does. 
+I do not mess around with this phone. Its my daily driver & I want stability. I do not care about launchers or battery life or performance because it has it all. I want things to just work and it does.
 
 I plan to use it as long as I can. When I get another phone(which is not anytime soon), this will become my emulation phone. I'll buy a telescopic controller & play games on it.

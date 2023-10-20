@@ -1,9 +1,10 @@
 ---
-title = "Generate Permutations"
-author = ["Suraj Yadav"]
-date = 2022-05-28
-tags = ["solution"]
-draft = false
+title: "Generate Permutations"
+author: ["Suraj Yadav"]
+date: 2022-05-28
+tags: ["solution"]
+draft: false
+layout: ../../layouts/RequestResponse.astro
 ---
 
 ## What is permutation? {#what-is-permutation}
@@ -86,7 +87,7 @@ function permute(array){
 The base case for permutation is array with 0 or 1 element
 
 | Input | Output |
-|-------|--------|
+| ----- | ------ |
 | [ ]   | [ ]    |
 | [x]   | [x]    |
 
