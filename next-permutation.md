@@ -1,5 +1,5 @@
 ---
-title  "Next permutation"
+title:  "Next permutation"
 author: ["Suraj Yadav"]
 date: 2022-05-30
 tags: ["solution"]
