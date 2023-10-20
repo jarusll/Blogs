@@ -1,7 +1,7 @@
 ---
 title: A game which I will make(someday)
 date: 2022-03-19
-layout: ../../layouts/RequestResponse.astro
+layout: ../../../layouts/RequestResponse.astro
 ---
 # A game which I will make(someday)
 
