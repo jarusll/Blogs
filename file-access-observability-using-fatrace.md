@@ -1,6 +1,7 @@
 ---
 title: File system observability using fatrace
 date: 2022-03-11
+layout: ../../layouts/RequestResponse.astro
 ---
 # What?
 |||
