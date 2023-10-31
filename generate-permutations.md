@@ -74,7 +74,6 @@ We'll be using functional javascript.
 
 <a id="code-snippet--permute"></a>
 ```js
-
 function permute(array){
 	<<permute-base-case>>
 	<<permute-reduction-case>>
