@@ -5,7 +5,7 @@ layout: ../../layouts/RequestResponse.astro
 ---
 # Your best friends in Emacs
 
-## In emacs, You are either
+**In emacs, You are either**
 - Invoking a function through a key press
 - Invoking a function manually
 
