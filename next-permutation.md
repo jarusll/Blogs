@@ -7,7 +7,7 @@ draft: false
 layout: ../../layouts/RequestResponse.astro
 ---
 
-## Next Permutation {#next-permutation}
+## Next Permutation
 
 **Do you know what a permutation is?**
 
@@ -15,7 +15,7 @@ Yes
 
 **Can you tell the next lexicographic permutation for `{2, 1, 3}`?**
 
--   No
+No
 
 **What is the permutation of `{1, 2, 3}`?**
 
@@ -44,11 +44,11 @@ From right to left
 
 **Whats a strictly decreasing arrangement in `{1, 3, 2}` from end?**
 
--   `{3, 2}`
+`{3, 2}`
 
 **Whats a strictly decreasing arrangement in `{2, 1, 3}` from end?**
 
--   `{3}`
+`{3}`
 
     | Arrangement | Vacant |
     |-------------|--------|
@@ -88,7 +88,7 @@ Yes
 
     | Arrangement               | Vacant |
     |---------------------------|--------|
-    | `{4, 6, 2, 3, *8, 5, 1*}` | `{}`   |
+    | `{4, 6, 2, 3, 8, 5, 1}` | `{}`   |
 
 **Moving the strictly decreasing to Vacant space**
 
