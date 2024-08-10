@@ -99,7 +99,7 @@ We can drop right 2 bits and pad left 2 bits by `0`
 
 Yes, `LEFT SHIFT` is `<<` and `RIGHT SHIFT` is `>>`
 
-Shifting `11010110` left by 1 = `11010110 << 1` = `10101100`
+Shifting `11010110` left by 1 = `11010110 << 1` = `110101100`
 
 Shifting `11010110` right by 1 = `11010110 >> 1` = `01101011`
 
@@ -153,10 +153,43 @@ We could use bit shifts
 
 **How can we set the 5th bit?**
 
+By ORing a bit mask which preseves the 5th bit `10000`
+
+- `BIT_PATTERN | 10000 = RESULT`
+- Conveniently, `BIT_PATTERN | (1 << 4) = RESULT`
+
+**How can we toggle a bit?**
+
+By using `XOR`
+
+**How so?**
+
+By observation.
+Heres the table for `XOR` operation
+| Input A | Input B | Result Bit |
+|---------|---------|------------|
+| 0       | 0       | 0          |
+| 0       | 1       | 1          |
+| 1       | 0       | 1          |
+| 1       | 1       | 0          |
+
+**Are there patterns where the `Result bit` is toggled with respect to `Input A`?**
+
+Yes,
+- `0 ^ 1 = 1`
+- `1 ^ 1 = 0`
+
 **How can we toggle the 5th bit?**
+
+`5TH_BIT_TOGGLED_PATTERN = BIT_PATTERN ^ (1 << 4)`
 
 **How can we compose bit masks?**
 
 By using [OR](#can-we-set-a-bit-if-either-of-the-bits-are-set)
 
-**How can we subtract bit masks?**
+```
+ENABLE_VIDEO = 01
+ENABLE_AUDIO - 10
+
+VIDEO_AND_AUDIO_ENABLED = ENABLE_VIDEO | ENABLE_AUDIO
+```
